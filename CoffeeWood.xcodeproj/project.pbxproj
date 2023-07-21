@@ -47,6 +47,7 @@
 		314B18022A68618A00F27C77 /* RegisterInputDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314B18012A68618A00F27C77 /* RegisterInputDelegate.swift */; };
 		314B18042A6861A100F27C77 /* RegisterOutputDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314B18032A6861A100F27C77 /* RegisterOutputDelegate.swift */; };
 		314B180A2A68932800F27C77 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314B18092A68932800F27C77 /* HomeViewController.swift */; };
+		31E105BB2A69B31B000D7210 /* CHIPageControl in Frameworks */ = {isa = PBXBuildFile; productRef = 31E105BA2A69B31B000D7210 /* CHIPageControl */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,6 +94,7 @@
 				314B17C42A66DB4C00F27C77 /* FirebaseDatabaseSwift in Frameworks */,
 				314B17C22A66DB4C00F27C77 /* FirebaseDatabase in Frameworks */,
 				314B17CC2A66DB4C00F27C77 /* FirebaseStorage in Frameworks */,
+				31E105BB2A69B31B000D7210 /* CHIPageControl in Frameworks */,
 				314B17BE2A66DB4C00F27C77 /* FirebaseAnalyticsSwift in Frameworks */,
 				314B17BA2A66DB4C00F27C77 /* FirebaseAnalytics in Frameworks */,
 				314B17BC2A66DB4C00F27C77 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */,
@@ -338,6 +340,7 @@
 				314B17C72A66DB4C00F27C77 /* FirebaseFirestoreSwift */,
 				314B17C92A66DB4C00F27C77 /* FirebaseMessaging */,
 				314B17CB2A66DB4C00F27C77 /* FirebaseStorage */,
+				31E105BA2A69B31B000D7210 /* CHIPageControl */,
 			);
 			productName = CoffeeWood;
 			productReference = 314B17922A66CCB100F27C77 /* CoffeeWood.app */;
@@ -369,6 +372,7 @@
 			mainGroup = 314B17892A66CCB100F27C77;
 			packageReferences = (
 				314B17B82A66DB4B00F27C77 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				31E105B92A69B31B000D7210 /* XCRemoteSwiftPackageReference "CHIPageControl" */,
 			);
 			productRefGroup = 314B17932A66CCB100F27C77 /* Products */;
 			projectDirPath = "";
@@ -651,6 +655,14 @@
 				minimumVersion = 10.0.0;
 			};
 		};
+		31E105B92A69B31B000D7210 /* XCRemoteSwiftPackageReference "CHIPageControl" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ChiliLabs/CHIPageControl";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -703,6 +715,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 314B17B82A66DB4B00F27C77 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
+		};
+		31E105BA2A69B31B000D7210 /* CHIPageControl */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 31E105B92A69B31B000D7210 /* XCRemoteSwiftPackageReference "CHIPageControl" */;
+			productName = CHIPageControl;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
