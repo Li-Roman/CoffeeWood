@@ -104,8 +104,8 @@ extension LoginController: LoginControllerInterface {
     func showHomePageConrtoller() {
         let viewController = HomeViewController()
         let navController = UINavigationController(rootViewController: viewController)
-        navController.modalPresentationStyle = .fullScreen
-        present(navController, animated: true)
+        
+        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(navController)
     }
     
     func showResetPasswordConrtoller() {
