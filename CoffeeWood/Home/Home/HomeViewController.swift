@@ -19,6 +19,24 @@ class HomeViewController: UIViewController {
         
         setupView()
     }
+    
+    deinit {
+        print("HomeViewController is dead")
+    }
+    
+    // MARK: - Private Methods
+    private func showLoginVC() {
+        let viewController = OnboardingModuleAssembly.configureModule()
+        let navController = UINavigationController(rootViewController: viewController)
+        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(navController)
+    }
+    
+    private func showAlert(_ error: Error) {
+        let alertController = UIAlertController(title: "Failed log out", message: "\(error.localizedDescription)", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "ok", style: .default)
+        alertController.addAction(okAction)
+        present(alertController, animated: true)
+    }
 }
 
 // MARK: - Setup View
@@ -78,15 +96,9 @@ extension HomeViewController {
     @objc private func logoutButtonAction(sender: UIButton) {
         switch AuthService.shared.singOut() {
         case .success:
-            let viewController = OnboardingModuleAssembly.configureModule()
-            let navController = UINavigationController(rootViewController: viewController)
-            navController.modalPresentationStyle = .fullScreen
-            present(navController, animated: true)
+            showLoginVC()
         case .failure(let error):
-            let alertController = UIAlertController(title: "Failed log out", message: "\(error.localizedDescription)", preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "ok", style: .default)
-            alertController.addAction(okAction)
-            present(alertController, animated: true)
+            showAlert(error)
         }
     }
 }
