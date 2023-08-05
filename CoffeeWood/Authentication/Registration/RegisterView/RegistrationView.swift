@@ -12,15 +12,14 @@ protocol RegistrationViewDelegate: AnyObject {
     func nextButtonDidTapped(username: String?, mobileNumber: String?, email: String?, password: String?)
     func termsButtonDidTapped()
     func loginButtonDidTapped()
-    func didRightSwipeAction()
 }
 
 class RegistrationView: UIView {
     
     weak var delegate: RegistrationViewDelegate?
     
-    private let registerLabel = UILabel()
-    private let registerSubLabel = UILabel()
+    private let registerLabel = MainLabel()
+    private let registerSubLabel = SubLabel()
     private let userTextFiled = AuthViewWithTextField(.username, .next)
     private let mobileTextFiled = AuthViewWithTextField(.mobileNumber, .next)
     private let emailTextField = AuthViewWithTextField(.email, .next)
@@ -29,7 +28,7 @@ class RegistrationView: UIView {
     private let termsButton = UIButton()
     private let nextButton = CircleNextButton()
     private let loginButton = UIButton()
-    private let loginBtnSubtitle = UILabel()
+    private let loginBtnSubtitle = SubLabel()
     private let secureButton = UIButton()
     
     override init(frame: CGRect) {
@@ -62,10 +61,6 @@ class RegistrationView: UIView {
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         addGestureRecognizer(tap)
-        
-        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(rightSwipeAction))
-        swipeRight.direction = .right
-        addGestureRecognizer(swipeRight)
     }
     
     private func mobileNumberFormatter(mask: String, mobileNumber: String) -> String {
@@ -112,9 +107,6 @@ extension RegistrationView {
         registerLabelConstraint()
         
         registerLabel.text = "Sign up"
-        registerLabel.font = UIFont(name: "Poppins-Medium", size: 24)
-        registerLabel.textAlignment = .left
-        registerLabel.textColor = .AppColor.mainLabels
     }
     
     private func registerLabelConstraint() {
@@ -130,9 +122,6 @@ extension RegistrationView {
         registerSubLabelConstraints()
         
         registerSubLabel.text = "Create an account here"
-        registerSubLabel.textAlignment = .left
-        registerSubLabel.font = UIFont(name: "Poppins-Regular", size: 15)
-        registerSubLabel.textColor = .AppColor.subtitles
     }
     
     private func registerSubLabelConstraints() {
@@ -202,7 +191,7 @@ extension RegistrationView {
         let termsButtonText = "By signing up you agree with our Terms of Use"
         termsButton.configuration?.attributedTitle = AttributedString(termsButtonText, attributes: container)
         termsButton.configuration?.titleAlignment = .center
-        termsButton.configuration?.baseForegroundColor = .AppColor.nextButtonBlue
+        termsButton.configuration?.baseForegroundColor = AppColors.Buttons.TextButton.blue
         termsButton.addTarget(self, action: #selector(termsButtonAction(sender:)), for: .touchUpInside)
     }
     
@@ -233,9 +222,6 @@ extension RegistrationView {
         loginBtnSubtitleConstraints()
         
         loginBtnSubtitle.text = "Already a member?"
-        loginBtnSubtitle.textAlignment = .left
-        loginBtnSubtitle.font = UIFont.systemFont(ofSize: 16)
-        loginBtnSubtitle.textColor = .AppColor.subtitles
     }
     
     private func loginBtnSubtitleConstraints() {
@@ -257,7 +243,7 @@ extension RegistrationView {
         
         loginButton.configuration = .borderless()
         loginButton.configuration?.attributedTitle = AttributedString("Sign in", attributes: container)
-        loginButton.configuration?.baseForegroundColor = .AppColor.nextButtonBlue
+        loginButton.configuration?.baseForegroundColor = AppColors.Buttons.TextButton.blue
         loginButton.addTarget(self, action: #selector(loginButtonAction(sender:)), for: .touchUpInside)
     }
     
@@ -305,10 +291,6 @@ extension RegistrationView {
     
     @objc private func hideKeyboard() {
         endEditing(true)
-    }
-    
-    @objc private func rightSwipeAction() {
-        delegate?.didRightSwipeAction()
     }
     
     @objc private func mobileNubmerLenghtLimiter(sender: UITextField) {

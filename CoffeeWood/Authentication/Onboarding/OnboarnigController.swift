@@ -44,7 +44,7 @@ class OnboardingController: UIViewController {
     }
     
     private func setupNavigationController() {
-        navigationController?.navigationBar.tintColor = .AppColor.mainLabels
+        navigationController?.navigationBar.tintColor = AppColors.NavController.darkBlue
     }
 }
 

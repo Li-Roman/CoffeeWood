@@ -50,7 +50,7 @@ extension HomeViewController {
     }
     
     private func setupNavBar() {
-        navigationController?.navigationBar.tintColor = .AppColor.mainLabels
+        navigationController?.navigationBar.tintColor = AppColors.NavController.darkBlue
     }
     
     private func setupNextButton() {
@@ -66,8 +66,8 @@ extension HomeViewController {
     private func setupLogoutButton() {
         logoutButton.configuration = .borderless()
         logoutButton.configuration?.image = UIImage(systemName: "iphone.and.arrow.forward")?.withTintColor(.blue)
-        logoutButton.configuration?.baseBackgroundColor = .AppColor.nextButtonBlue
-        logoutButton.configuration?.baseForegroundColor = .AppColor.nextButtonBlue
+        logoutButton.configuration?.baseBackgroundColor = AppColors.Buttons.Back.darkBlue
+//        logoutButton.configuration?.baseForegroundColor = .AppColor.nextButtonBlue
         logoutButton.addTarget(self, action: #selector(logoutButtonAction(sender:)), for: .touchUpInside)
         
         view.addSubview(logoutButton)

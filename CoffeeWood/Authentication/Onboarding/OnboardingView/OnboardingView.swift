@@ -20,8 +20,8 @@ class OnboardingView: UIView {
     
     private var numberOfPages = 5
     private let nextButton = CircleNextButton()
-    private let mainLabel = UILabel()
-    private let subLabel = UILabel()
+    private let mainLabel = MainLabel()
+    private let subLabel = SubLabel()
     private let mainImage = UIImageView()
     private let pageControl = CHIPageControlPaprika()
     
@@ -50,8 +50,8 @@ extension OnboardingView {
         backgroundColor = .systemBackground
 
         setupMainImage()
-        setupWelcomeTitle()
-        setupWelcomeSubtitle()
+        setupMainLabel()
+        setupSublabel()
         setupPageControl()
         setupNextButton()
     }
@@ -72,21 +72,14 @@ extension OnboardingView {
         }
     }
     
-    private func setupWelcomeTitle() {
-        welcomeTitleConstraints()
+    private func setupMainLabel() {
+        mainLabelConstraint()
         
-        let attributedString = NSMutableAttributedString(string: "Making your days with our coffee.")
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.lineSpacing = 6
-        attributedString.addAttribute(NSAttributedString.Key.paragraphStyle, value:paragraphStyle, range:NSMakeRange(0, attributedString.length))
-        mainLabel.attributedText = attributedString
-        mainLabel.textAlignment = .center
-        mainLabel.numberOfLines = 2
-        mainLabel.font = UIFont(name: "Helvetica Neue", size: 26)
-        mainLabel.textColor = .AppColor.mainLabels
+        let mainLabelText = "Making your days with our coffee."
+        mainLabel.makeMeOnbording(with: mainLabelText)
     }
     
-    private func welcomeTitleConstraints() {
+    private func mainLabelConstraint() {
         addSubview(mainLabel)
         mainLabel.snp.makeConstraints { maker in
             maker.left.right.equalToSuperview().inset(52)
@@ -95,21 +88,14 @@ extension OnboardingView {
         }
     }
     
-    private func setupWelcomeSubtitle() {
-        welcomeSubtitleConstraints()
+    private func setupSublabel() {
+        subLabelConstraints()
         
-        let attributedString = NSMutableAttributedString(string: "The best grain, the finest roast, the most powerful flavor.")
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.lineSpacing = 8
-        attributedString.addAttribute(NSAttributedString.Key.paragraphStyle, value:paragraphStyle, range:NSMakeRange(0, attributedString.length))
-        subLabel.attributedText = attributedString
-        subLabel.textAlignment = .center
-        subLabel.numberOfLines = 2
-        subLabel.font = UIFont(name: "Helvetica Neue", size: 16)
-        subLabel.textColor = .AppColor.subtitles
+        let subLabelText = "The best grain, the finest roast, the most powerful flavor."
+        subLabel.makeMeOnbording(with: subLabelText)
     }
     
-    private func welcomeSubtitleConstraints() {
+    private func subLabelConstraints() {
         addSubview(subLabel)
         subLabel.snp.makeConstraints { maker in
             maker.left.right.equalToSuperview().inset(60)
@@ -125,8 +111,8 @@ extension OnboardingView {
         pageControl.progress = 0
         pageControl.radius = 6
         pageControl.padding = 12
-        pageControl.tintColor = .AppColor.subtitles
-        pageControl.currentPageTintColor = .AppColor.nextButtonBlue
+        pageControl.tintColor = AppColors.PageControl.gray
+        pageControl.currentPageTintColor = AppColors.PageControl.blue
         pageControl.enableTouchEvents = true
         pageControl.delegate = self
     }
@@ -159,7 +145,6 @@ extension OnboardingView {
 // MARK: - Actions
 extension OnboardingView {
     @objc private func nextButtonAction(sender: UIButton) {
-        print("Next Button Did Tapped in OnboardingView")
         delegate?.didTappedNextButton()
     }
 }

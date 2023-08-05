@@ -103,7 +103,7 @@ extension UserProfileSectionView {
     private func setupIconView() {
         iconViewConstraints()
         
-        iconView.backgroundColor = .AppColor.verificationSectionBackground
+        iconView.backgroundColor = AppColors.Background.grayBack
         iconView.layer.cornerRadius = 22
         iconView.clipsToBounds = true
     }
@@ -137,7 +137,7 @@ extension UserProfileSectionView {
         sectionLabel.text = sectionType.getLabelText()
         sectionLabel.textAlignment = .left
         sectionLabel.font = UIFont(name: "Poppins-Regular", size: 11)
-        sectionLabel.textColor = .AppColor.subtitles
+        sectionLabel.textColor = AppColors.Labels.gray
     }
     
     private func sectionLabelConstraints() {
@@ -155,12 +155,12 @@ extension UserProfileSectionView {
         
         let attributes: [NSAttributedString.Key: Any] = [
             .font: UIFont(name: "Poppins-Medium", size: 15)!,
-            .foregroundColor: UIColor.AppColor.mainLabels,
+            .foregroundColor: AppColors.TextField.Text.blue,
         ]
         let textViewText = sectionType.getTextFieldText(user: user)
         textView.attributedText = NSAttributedString(string: textViewText, attributes: attributes)
         textView.font = UIFont(name: "Poppins-Medium", size: 15)!
-        textView.textColor = .AppColor.mainLabels
+        textView.textColor = AppColors.TextField.Text.blue
         textView.keyboardType = sectionType.getKeyboradType()
         textView.textAlignment = .left
         textView.autocorrectionType = .no

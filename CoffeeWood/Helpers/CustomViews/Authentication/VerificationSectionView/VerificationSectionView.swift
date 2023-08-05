@@ -48,7 +48,7 @@ extension VerificationSectionView {
 extension VerificationSectionView {
     private func setupView() {
         setupTextFiled()
-        backgroundColor = .AppColor.verificationSectionBackground
+        backgroundColor = AppColors.Background.grayBack
     }
     
     private func setupTextFiled() {

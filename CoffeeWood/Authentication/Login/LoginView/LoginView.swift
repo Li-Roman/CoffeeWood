@@ -13,16 +13,15 @@ protocol LoginViewDelegate: AnyObject {
     func didTappedNextButton(email: String?, password: String?)
     func didTappedResetButton()
     func didTappedRegistrationButton()
-    func didRightSwipeAction()
 }
 
 class LoginView: UIView {
     
     weak var delegate: LoginViewDelegate?
 
-    private let signInLabel = UILabel()
-    private let signInSubLabel = UILabel()
-    private let newMemberLabel = UILabel()
+    private let signInLabel = MainLabel()
+    private let signInSubLabel = SubLabel()
+    private let newMemberLabel = SubLabel()
     private let emailTextField = AuthViewWithTextField(.email, .next)
     private let passwordTextField = AuthViewWithTextField(.password, .done)
     private let resetPasswordButton = UIButton()
@@ -30,6 +29,7 @@ class LoginView: UIView {
     private let registerButton = UIButton()
     private let secureButton = UIButton()
     
+    // MARK: - Initialization
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
@@ -63,10 +63,6 @@ class LoginView: UIView {
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         addGestureRecognizer(tap)
-        
-        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(rightSwipeAction))
-        swipeRight.direction = .right
-        addGestureRecognizer(swipeRight)
     }
 }
 
@@ -90,9 +86,6 @@ extension LoginView {
         signInLabelConstraints()
         
         signInLabel.text = "Sign in"
-        signInLabel.textAlignment = .left
-        signInLabel.font = UIFont(name: "Poppins-Medium", size: 24)!
-        signInLabel.textColor = .AppColor.mainLabels
     }
     
     private func signInLabelConstraints() {
@@ -108,9 +101,6 @@ extension LoginView {
         signInSubLabelConstraints()
         
         signInSubLabel.text = "Welcome back"
-        signInSubLabel.textAlignment = .left
-        signInSubLabel.font = UIFont(name: "Poppins-Regular", size: 15)
-        signInSubLabel.textColor = .AppColor.subtitles
     }
     
     private func signInSubLabelConstraints() {
@@ -126,9 +116,6 @@ extension LoginView {
         newMemberLabelConstraints()
         
         newMemberLabel.text = "New member?"
-        newMemberLabel.font = UIFont(name: "Poppins-Regular", size: 15)
-        newMemberLabel.textAlignment = .left
-        newMemberLabel.textColor = .AppColor.subtitles
     }
     
     private func newMemberLabelConstraints() {
@@ -198,7 +185,7 @@ extension LoginView {
         
         let attributes: [NSAttributedString.Key: Any] = [
             .font: UIFont(name: "Poppins-Medium", size: 15)!,
-            .foregroundColor: UIColor.AppColor.textButtons,
+            .foregroundColor: AppColors.Buttons.TextButton.blue,
             .underlineStyle: NSUnderlineStyle.single.rawValue
         ]
         let attributedTitle = NSAttributedString(string: "Forgot Password?", attributes: attributes)
@@ -238,7 +225,7 @@ extension LoginView {
         container.font = UIFont(name: "Poppins-Medium", size: 15)!
         registerButton.configuration = .borderless()
         registerButton.configuration?.attributedTitle = AttributedString("Sign up", attributes: container)
-        registerButton.configuration?.baseForegroundColor = .AppColor.nextButtonBlue
+        registerButton.configuration?.baseForegroundColor = AppColors.Buttons.TextButton.blue
         registerButton.addTarget(self, action: #selector(registerButtonAction(sender:)), for: .touchUpInside)
     }
     
@@ -273,10 +260,6 @@ extension LoginView {
     
     @objc private func hideKeyboard() {
         endEditing(true)
-    }
-    
-    @objc func rightSwipeAction() {
-        delegate?.didRightSwipeAction()
     }
 }
 

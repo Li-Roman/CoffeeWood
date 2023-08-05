@@ -10,7 +10,6 @@ import UIKit
 import SnapKit
 
 protocol VerificationViewDelegate: AnyObject {
-    func didRightSwipeAction()
     func didTappedNextButton(smsCode: String?)
 }
 
@@ -18,8 +17,8 @@ class VerificationView: UIView {
     
     weak var delegate: VerificationViewDelegate?
     
-    private let verificationLabel = UILabel()
-    private let verificationSubLabel = UILabel()
+    private let verificationLabel = MainLabel()
+    private let verificationSubLabel = SubLabel()
     private let nextButton = CircleNextButton()
     private let sendCodeButton = UIButton()
     private var sectionsKeyStackView = UIStackView()
@@ -87,9 +86,6 @@ extension VerificationView {
         verificationLabelConstraints()
         
         verificationLabel.text = "Verification"
-        verificationLabel.font = UIFont(name: "Poppins-Medium", size: 24)
-        verificationLabel.textColor = .AppColor.mainLabels
-        verificationLabel.textAlignment = .left
     }
     
     private func verificationLabelConstraints() {
@@ -105,9 +101,6 @@ extension VerificationView {
         verificationSubLabelConstraints()
         
         verificationSubLabel.text = "Enter the OTP code we sent you"
-        verificationSubLabel.font = UIFont(name: "Poppins-Regular", size: 15)
-        verificationSubLabel.textColor = .AppColor.subtitles
-        verificationSubLabel.textAlignment = .left
     }
     
     private func verificationSubLabelConstraints() {
@@ -159,7 +152,7 @@ extension VerificationView {
         let termsButtonText = "Send Code"
         sendCodeButton.configuration?.attributedTitle = AttributedString(termsButtonText, attributes: container)
         sendCodeButton.configuration?.titleAlignment = .center
-        sendCodeButton.configuration?.baseForegroundColor = .AppColor.nextButtonBlue
+        sendCodeButton.configuration?.baseForegroundColor = AppColors.Buttons.TextButton.blue
         sendCodeButton.addTarget(self, action: #selector(sendCodeButtonAction(sender:)), for: .touchUpInside)
     }
     
@@ -194,10 +187,6 @@ extension VerificationView {
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         addGestureRecognizer(tap)
-        
-        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(rightSwipeAction))
-        swipeRight.direction = .right
-        addGestureRecognizer(swipeRight)
     }
 }
 
@@ -214,10 +203,6 @@ extension VerificationView {
     
     @objc private func hideKeyboard() {
         endEditing(true)
-    }
-    
-    @objc func rightSwipeAction() {
-        delegate?.didRightSwipeAction()
     }
     
     @objc private func changeTextField(sender: UITextField) {

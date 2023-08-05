@@ -70,7 +70,7 @@ extension AuthViewWithTextField {
     }
     
     private func setupHorizontalLine() {
-        horizonalLine.backgroundColor = .AppColor.lines
+        horizonalLine.backgroundColor = AppColors.Lines.gray
         
         horizonalLine.snp.makeConstraints { maker in
             maker.bottom.left.right.equalToSuperview()
@@ -79,7 +79,7 @@ extension AuthViewWithTextField {
     }
     
     private func setupVerticalLine() {
-        verticalLine.backgroundColor = .AppColor.lines
+        verticalLine.backgroundColor = AppColors.Lines.gray
         
         verticalLine.snp.makeConstraints { maker in
             maker.left.equalToSuperview().offset(40)
@@ -108,7 +108,7 @@ extension AuthViewWithTextField {
         textField.isSecureTextEntry = sectionType.isSecureTextEntry()
         textField.borderStyle = .none
         textField.font = UIFont(name: "Poppins-Medium", size: 15)!
-        textField.textColor = .AppColor.mainLabels
+        textField.textColor = AppColors.TextField.Text.blue
         textField.adjustsFontSizeToFitWidth = true
         textField.autocorrectionType = .no
         textField.clearButtonMode = .whileEditing
