@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3132D7492A7EBD64000C1679 /* GeneralTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3132D7482A7EBD64000C1679 /* GeneralTabBarController.swift */; };
 		3135D6742A7AB2DA00BB1182 /* AuthSectionViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3135D6732A7AB2DA00BB1182 /* AuthSectionViewType.swift */; };
 		3135D6762A7BBD2500BB1182 /* AlertControllerMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3135D6752A7BBD2500BB1182 /* AlertControllerMaker.swift */; };
 		3135D6792A7BD31E00BB1182 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3135D6782A7BD31E00BB1182 /* UserDefaultsManager.swift */; };
@@ -70,6 +71,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3132D7482A7EBD64000C1679 /* GeneralTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralTabBarController.swift; sourceTree = "<group>"; };
 		3135D6732A7AB2DA00BB1182 /* AuthSectionViewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthSectionViewType.swift; sourceTree = "<group>"; };
 		3135D6752A7BBD2500BB1182 /* AlertControllerMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertControllerMaker.swift; sourceTree = "<group>"; };
 		3135D6782A7BD31E00BB1182 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
@@ -145,6 +147,101 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3132D7412A7EB02E000C1679 /* RewardsSection */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RewardsSection;
+			sourceTree = "<group>";
+		};
+		3132D7422A7EB04B000C1679 /* OrderSection */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = OrderSection;
+			sourceTree = "<group>";
+		};
+		3132D7432A7EB3E9000C1679 /* HomaPage */ = {
+			isa = PBXGroup;
+			children = (
+				314B18092A68932800F27C77 /* HomeViewController.swift */,
+			);
+			path = HomaPage;
+			sourceTree = "<group>";
+		};
+		3132D7442A7EB8EF000C1679 /* Details  */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Details ";
+			sourceTree = "<group>";
+		};
+		3132D7452A7EB90A000C1679 /* MyCart */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MyCart;
+			sourceTree = "<group>";
+		};
+		3132D7462A7EB91B000C1679 /* OrderConfirmation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = OrderConfirmation;
+			sourceTree = "<group>";
+		};
+		3132D7472A7EBBA4000C1679 /* OrderSuccess */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = OrderSuccess;
+			sourceTree = "<group>";
+		};
+		3132D74A2A7EBE4F000C1679 /* AuthHelper */ = {
+			isa = PBXGroup;
+			children = (
+				31B0980D2A6C02B100CB99BE /* AuthHelper.swift */,
+			);
+			path = AuthHelper;
+			sourceTree = "<group>";
+		};
+		3132D74B2A7EBE61000C1679 /* AlertControllerMaker */ = {
+			isa = PBXGroup;
+			children = (
+				3135D6752A7BBD2500BB1182 /* AlertControllerMaker.swift */,
+			);
+			path = AlertControllerMaker;
+			sourceTree = "<group>";
+		};
+		3132D74C2A7EBE84000C1679 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				3135D6772A7BD2CF00BB1182 /* UserDefaultsManager */,
+				314B17B52A66D93300F27C77 /* FirebaseManager */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		3132D74D2A7ED275000C1679 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				3135D6712A7A96D200BB1182 /* VerificationSectionView */,
+				3135D6722A7A972300BB1182 /* AuthSectionView */,
+				314B17DA2A681B1100F27C77 /* CircleNextButton.swift */,
+				313675AD2A6F27F900B1E63A /* MainLabel.swift */,
+				313675AF2A6F2F7000B1E63A /* SubLabel.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		3132D74E2A7ED292000C1679 /* General */ = {
+			isa = PBXGroup;
+			children = (
+				318B2F682A76857F001F694F /* UserProfileSectionView */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
 		3135D6712A7A96D200BB1182 /* VerificationSectionView */ = {
 			isa = PBXGroup;
 			children = (
@@ -216,14 +313,11 @@
 		314B17942A66CCB100F27C77 /* CoffeeWood */ = {
 			isa = PBXGroup;
 			children = (
-				31B098112A6C8AA700CB99BE /* Model */,
-				3135D6772A7BD2CF00BB1182 /* UserDefaultsManager */,
-				314B17B52A66D93300F27C77 /* FirebaseManager */,
-				314B18082A6892F500F27C77 /* Home */,
+				3132D74C2A7EBE84000C1679 /* Managers */,
+				31B098112A6C8AA700CB99BE /* Models */,
 				314B17F52A685FDE00F27C77 /* Authentication */,
+				314B18082A6892F500F27C77 /* General */,
 				31B0980C2A6C028A00CB99BE /* Helpers */,
-				314B17EB2A68489400F27C77 /* Extensions */,
-				314B17D92A681AEB00F27C77 /* CustomViews */,
 				314B17A92A66CE5A00F27C77 /* Application */,
 				314B17AA2A66CE6400F27C77 /* Resources */,
 			);
@@ -301,12 +395,8 @@
 		314B17D92A681AEB00F27C77 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
-				318B2F682A76857F001F694F /* UserProfileSectionView */,
-				3135D6712A7A96D200BB1182 /* VerificationSectionView */,
-				3135D6722A7A972300BB1182 /* AuthSectionView */,
-				314B17DA2A681B1100F27C77 /* CircleNextButton.swift */,
-				313675AD2A6F27F900B1E63A /* MainLabel.swift */,
-				313675AF2A6F2F7000B1E63A /* SubLabel.swift */,
+				3132D74D2A7ED275000C1679 /* Authentication */,
+				3132D74E2A7ED292000C1679 /* General */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -374,13 +464,15 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
-		314B18082A6892F500F27C77 /* Home */ = {
+		314B18082A6892F500F27C77 /* General */ = {
 			isa = PBXGroup;
 			children = (
-				318B2F6C2A77DAEF001F694F /* Home */,
-				31C23CD62A7568F100B1C965 /* UserProfile */,
+				3132D7482A7EBD64000C1679 /* GeneralTabBarController.swift */,
+				318B2F6C2A77DAEF001F694F /* HomeSection */,
+				3132D7412A7EB02E000C1679 /* RewardsSection */,
+				3132D7422A7EB04B000C1679 /* OrderSection */,
 			);
-			path = Home;
+			path = General;
 			sourceTree = "<group>";
 		};
 		318B2F682A76857F001F694F /* UserProfileSectionView */ = {
@@ -392,29 +484,36 @@
 			path = UserProfileSectionView;
 			sourceTree = "<group>";
 		};
-		318B2F6C2A77DAEF001F694F /* Home */ = {
+		318B2F6C2A77DAEF001F694F /* HomeSection */ = {
 			isa = PBXGroup;
 			children = (
-				314B18092A68932800F27C77 /* HomeViewController.swift */,
+				3132D7472A7EBBA4000C1679 /* OrderSuccess */,
+				3132D7462A7EB91B000C1679 /* OrderConfirmation */,
+				3132D7452A7EB90A000C1679 /* MyCart */,
+				3132D7442A7EB8EF000C1679 /* Details  */,
+				3132D7432A7EB3E9000C1679 /* HomaPage */,
+				31C23CD62A7568F100B1C965 /* UserProfile */,
 			);
-			path = Home;
+			path = HomeSection;
 			sourceTree = "<group>";
 		};
 		31B0980C2A6C028A00CB99BE /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				31B0980D2A6C02B100CB99BE /* AuthHelper.swift */,
-				3135D6752A7BBD2500BB1182 /* AlertControllerMaker.swift */,
+				3132D74B2A7EBE61000C1679 /* AlertControllerMaker */,
+				3132D74A2A7EBE4F000C1679 /* AuthHelper */,
+				314B17EB2A68489400F27C77 /* Extensions */,
+				314B17D92A681AEB00F27C77 /* CustomViews */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		31B098112A6C8AA700CB99BE /* Model */ = {
+		31B098112A6C8AA700CB99BE /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				31B098122A6C8AC400CB99BE /* DDUser.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		31C23CD62A7568F100B1C965 /* UserProfile */ = {
@@ -608,6 +707,7 @@
 				31FCF0D42A713957005532FB /* VerificationController.swift in Sources */,
 				314B17DB2A681B1100F27C77 /* CircleNextButton.swift in Sources */,
 				314B17F82A6860FA00F27C77 /* RegistrationController.swift in Sources */,
+				3132D7492A7EBD64000C1679 /* GeneralTabBarController.swift in Sources */,
 				318B2F6E2A786453001F694F /* UserProfileSectionViewType.swift in Sources */,
 				314B17E82A682E9600F27C77 /* LoginView.swift in Sources */,
 				314B17ED2A6848B100F27C77 /* UIColorExtension.swift in Sources */,

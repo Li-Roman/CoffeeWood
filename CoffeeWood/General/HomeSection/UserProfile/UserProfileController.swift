@@ -64,9 +64,8 @@ class UserProfileController: UIViewController {
 // MARK: - Setup Navigation Controller
 extension UserProfileController {
     private func setupNavController() {
-//        navigationController?.title = "Profile"
         self.title = "Profile"
-        let image = UIImage(systemName: "arrow.left")?.withTintColor(.AppColor.nextButtonBlue)
+        let image = UIImage(systemName: "arrow.left")?.withTintColor(AppColors.NavController.darkBlue)
         let button = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(leftBarButtonAction(sender:)))
         navigationItem.leftBarButtonItem = button
     }

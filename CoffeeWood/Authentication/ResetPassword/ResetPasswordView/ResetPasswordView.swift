@@ -11,7 +11,6 @@ import SnapKit
 
 protocol ResetPasswordViewDelegate: AnyObject {
     func nextButtonDidTapped(with email: String?)
-    func didRightSwipeAction()
 }
 
 class ResetPasswordView: UIView {
@@ -41,10 +40,6 @@ class ResetPasswordView: UIView {
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         addGestureRecognizer(tap)
-        
-        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(rightSwipeAction))
-        swipeRight.direction = .right
-        addGestureRecognizer(swipeRight)
     }
 }
 
@@ -77,8 +72,6 @@ extension ResetPasswordView {
         mainLabelConstraints()
         
         mainLabel.text = "Forgot Password?"
-        mainLabel.font = UIFont(name: "Poppins-Medium", size: 24)
-        mainLabel.textAlignment = .left
     }
     
     private func mainLabelConstraints() {
@@ -94,8 +87,6 @@ extension ResetPasswordView {
         subLabelConstraint()
         
         subLabel.text = "Enter your email address"
-        subLabel.font = UIFont(name: "Poppins-Regular", size: 15)
-        subLabel.textAlignment = .left
     }
     
     private func subLabelConstraint() {
@@ -144,10 +135,6 @@ extension ResetPasswordView {
     
     @objc private func hideKeyboard() {
         endEditing(true)
-    }
-    
-    @objc func rightSwipeAction() {
-        delegate?.didRightSwipeAction()
     }
 }
 

@@ -27,7 +27,7 @@ extension CircleNextButton {
         let config = UIImage.SymbolConfiguration(pointSize: size)
         let image = UIImage(systemName: "arrow.right")!.withConfiguration(config)
         
-        configuration?.image = image.withTintColor(.white)
+        configuration?.image = image.withTintColor(AppColors.Buttons.Icon.whiteIcon)
     }
 }
 
@@ -36,7 +36,7 @@ extension CircleNextButton {
     private func setupButton() {
         configuration = .filled()
         configuration?.cornerStyle = .capsule
-        configuration?.baseBackgroundColor = .AppColor.nextButtonBlue
+        configuration?.baseBackgroundColor = AppColors.Buttons.Back.blue
         setupButtonImage()
         makeShadow()
     }
