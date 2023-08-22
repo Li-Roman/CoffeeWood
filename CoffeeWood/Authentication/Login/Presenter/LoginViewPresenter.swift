@@ -25,7 +25,7 @@ class LoginViewPresenter {
                 
             case .success:
                 UserDefaultsManager.shared.set(email, forkey: .emailTextFieldText)
-                self.viewController?.showHomePageConrtoller()
+                self.viewController?.showTabbarController()
                 
             case .failure(let error):
 

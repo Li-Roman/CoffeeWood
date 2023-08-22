@@ -16,14 +16,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: scene)
         
         if let _ = AuthService.shared.currentUser {
-            let viewController = HomeViewController()
-            let navController = UINavigationController(rootViewController: viewController)
-            window?.rootViewController = navController
+            let tabbarController = GeneralTabBatController()
+            window?.rootViewController = tabbarController
+
         } else {
             let viewController = OnboardingModuleAssembly.configureModule()
             let navController = UINavigationController(rootViewController: viewController)
             window?.rootViewController = navController
         }
+        
+//        let presenter = RewardsPresenter()
+//        let viewController = RewardsController(with: presenter)
+//        window?.rootViewController = viewController
         
         window?.makeKeyAndVisible()
     }

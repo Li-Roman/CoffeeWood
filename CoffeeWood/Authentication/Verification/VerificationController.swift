@@ -74,10 +74,9 @@ extension VerificationController: VerificationViewDelegate {
 // MARK: - VerificationConrtollerInterface
 extension VerificationController: VerificationConrtollerInterface {
     func showHomeVC() {
-        let viewController = HomeViewController()
-        let navController = UINavigationController(rootViewController: viewController)
+        let tabbarController = GeneralTabBatController()
         
-        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(navController)
+        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(tabbarController)
     }
     
     func showAlertConrtoller(_ alertController: UIAlertController) {

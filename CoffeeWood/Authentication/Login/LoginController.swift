@@ -18,11 +18,11 @@ protocol LoginControllerDelegate: AnyObject {
 protocol LoginControllerInterface: AnyObject {
     func pushRegistrationConrtoller()
     func pushResetPasswordConrtoller()
-    func showHomePageConrtoller()
     func showResetPasswordConrtoller()
     func showAlertController(_ alertController: UIAlertController)
     func clearPasswordTextField()
     func clearEmailTextField()
+    func showTabbarController()
 }
 
 class LoginController: UIViewController {
@@ -101,12 +101,18 @@ extension LoginController: LoginControllerInterface {
         navigationController?.pushViewController(registerVC, animated: true)
     }
     
-    func showHomePageConrtoller() {
-        let viewController = HomeViewController()
-        let navController = UINavigationController(rootViewController: viewController)
+    func showTabbarController() {
+        let tabbarController = GeneralTabBatController()
         
-        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(navController)
+        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(tabbarController)
     }
+//    
+//    func showTabbarController() {
+//        let tabbarController = GeneralTabBatController()
+//        tabbarController.modalTransitionStyle = .flipHorizontal
+//        tabbarController.modalPresentationStyle = .fullScreen
+//        present(tabbarController, animated: true)
+//    }
     
     func showResetPasswordConrtoller() {
         let viewConrtoller = ResetPasswordModuleAssembly.configureModule()
