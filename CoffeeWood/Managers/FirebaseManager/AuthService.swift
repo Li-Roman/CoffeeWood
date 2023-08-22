@@ -42,19 +42,22 @@ final class AuthService {
         }
     }
     
-    func singUp(username: String, mobileNumer: String, email: String, password: String, completion: @escaping (Result <User, Error>) -> Void) {
+    func singUp(username: String, mobileNumer: String, email: String, password: String, completion: @escaping (Result <DDUser, Error>) -> Void) {
         auth.createUser(withEmail: email, password: password) { result, error in
             if let result = result {
                 let ddUser = DDUser(id: result.user.uid,
                                     name: username,
                                     email: email,
                                     mobileNumber: mobileNumer,
-                                    address: "")
+                                    address: ""
+//                                    ordersID: "",
+//                                    cartID: ""
+                                 )
                 
                 DatabaseService.shared.setUser(user: ddUser) { resultDB in
                     switch resultDB {
-                    case .success(_):
-                        completion(.success(result.user))
+                    case .success(let user):
+                        completion(.success(user))
                     case .failure(let error):
                         completion(.failure(error))
                     }

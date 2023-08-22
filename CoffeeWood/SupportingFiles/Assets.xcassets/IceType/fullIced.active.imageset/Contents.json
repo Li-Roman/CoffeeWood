@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "ice_big_press_icon.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

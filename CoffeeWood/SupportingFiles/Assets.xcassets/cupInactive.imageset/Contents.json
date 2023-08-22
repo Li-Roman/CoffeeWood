@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "cap_inactive_icon.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

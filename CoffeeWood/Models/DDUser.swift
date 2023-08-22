@@ -14,6 +14,7 @@ struct DDUser: Identifiable {
     var email: String
     var mobileNumber: String
     var address: String
+//    var ordersID: String = UUID().uuidString
     
     var representation: [String: Any] {
         
@@ -24,6 +25,7 @@ struct DDUser: Identifiable {
         representation["email"] = email
         representation["mobileNumber"] = mobileNumber
         representation["address"] = address
+//        representation["ordersID"] = ordersID
         
         return representation
     }
