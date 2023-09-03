@@ -1,10 +1,3 @@
-//
-//  DetailController.swift
-//  CoffeeWood
-//
-//  Created by Роман Хилюк on 13.08.2023.
-//
-
 import Foundation
 import UIKit
 import SnapKit
@@ -69,43 +62,8 @@ class DetailController: UIViewController {
         detailView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
-//        setupNavController()
     }
-    
-//    private func setupNavController() {
-//        self.title = "Details"
-//        navigationController?.navigationBar.isHidden = true
-//
-//        let arrowImage = UIImage(systemName: "arrow.left")!
-//        let backButton = UIBarButtonItem(image: arrowImage, style: .plain, target: self, action: #selector(leftBarButtonAction(sender:)))
-//        navigationItem.leftBarButtonItem = backButton
-//
-//        let cartImage = Resources.Images.HomePage.cart
-//        let cartButton = UIButton()
-////        cartButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 40)
-//        cartButton.frame = CGRect(x: 0, y: 0, width: 22, height: 22)
-//        cartButton.setImage(cartImage, for: .normal)
-//        cartButton.addTarget(self, action: #selector(cartBarButtonAction(sender:)), for: .touchUpInside)
-//        cartButton.imageView?.contentMode = .scaleAspectFit
-//
-//        let rightBarButton = UIBarButtonItem(customView: UIView(frame: CGRect(x: 0, y: 0, width: 22, height: 22)))
-//        rightBarButton.customView?.addSubview(cartButton)
-//        rightBarButton.customView?.frame = cartButton.frame
-//
-//        navigationItem.rightBarButtonItem = rightBarButton
-//    }
 }
-
-//// MARK: - Actions
-//extension DetailController {
-//    @objc private func leftBarButtonAction(sender: UIBarButtonItem) {
-//        navigationController?.popViewController(animated: true)
-//    }
-//
-//    @objc private func cartBarButtonAction(sender: UIBarButtonItem) {
-//        delegate?.willShowMyCatrController()
-//    }
-//}
 
 // MARK: - DetailViewDelegate
 extension DetailController: DetailViewDelegate {
@@ -157,7 +115,6 @@ extension DetailController: DetailControllerInterface {
     }
     
     func showAlert(_ alert: UIAlertController) {
-        print("Show alert in controller")
         present(alert, animated: true)
     }
     

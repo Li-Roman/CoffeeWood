@@ -1,10 +1,3 @@
-//
-//  UserDefaultsManager.swift
-//  CoffeeWood
-//
-//  Created by Роман Хилюк on 03.08.2023.
-//
-
 import Foundation
 
 public enum UserDefaultsKeys: String {
@@ -49,13 +42,12 @@ final class UserDefaultsManager {
 
 // MARK: - StorageManagerProtocol
 extension UserDefaultsManager: StorageManagerProtocol {
+    
     // MARK: - Create/Upgrade Methods
-    /// Метод установления любого объекта
     func set(_ object: Any?, forkey key: UserDefaultsKeys) {
         store(object, key: key.rawValue)
     }
     
-    /// Метод установления кастомных структур
     func set<T: Encodable>(object: T?, forKey key: UserDefaultsKeys) {
         let jsonData = try? JSONEncoder().encode(object)
         store(jsonData, key: key.rawValue)

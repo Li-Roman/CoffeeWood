@@ -1,10 +1,3 @@
-//
-//  Position.swift
-//  CoffeeWood
-//
-//  Created by Роман Хилюк on 07.08.2023.
-//
-
 import Foundation
 import UIKit
 import FirebaseFirestore
@@ -73,7 +66,6 @@ struct CartPosition {
     }
     
     init?(doc: QueryDocumentSnapshot) {
-//        print("Enter in CartPosition init?, try to make position")
         let data = doc.data()
         
         guard let id = data["id"] as? String else { return nil }
@@ -84,8 +76,6 @@ struct CartPosition {
         guard let cupSize = data["cupSize"] as? String else { return nil }
         guard let iceAmount = data["iceAmount"] as? String else { return nil }
         guard let cost = data["cost"] as? Double else { return nil }
-        
-//        print("id = \(id)\n title= \(title)\n count = \(count)\n espessoCount = \(espessoCount)\n temperatureType = \(temperatureType)\n cupSize = \(cupSize)\n iceAmount= \(iceAmount)\n cost = \(cost)")
         
         self.id = id
         self.productTitle = title

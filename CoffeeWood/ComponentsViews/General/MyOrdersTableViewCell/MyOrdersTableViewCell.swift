@@ -1,10 +1,3 @@
-//
-//  MyOrdersTableViewCell.swift
-//  CoffeeWood
-//
-//  Created by Роман Хилюк on 21.08.2023.
-//
-
 import Foundation
 import UIKit
 import SnapKit
@@ -28,14 +21,14 @@ class MyOrdersTableViewCell: UITableViewCell {
     }
     
     func configureCell(with order: Order) {
-        print("Enter in configure cell, order id = \(order.id), position count = \(order.cartPositions.count)")
         var products = [String]()
         order.cartPositions.forEach { position in
             products.append(position.productTitle.capitalized)
         }
-        dateLabel.text = "\(order.date)"
+        
+        dateLabel.text = order.date.makeMeAppDateStyle()
         addressLabel.text = order.address
-        totalCostLabel.text = "$\(order.cost)"
+        totalCostLabel.text = order.cost.makeMePrice()
         productsLabel.text = products.joined(separator: ", ")
     }
 }
@@ -126,7 +119,7 @@ extension MyOrdersTableViewCell {
     private func setupTotalCostLabel() {
         totalCostLabel.font = Resources.Font.OrdersTableView.productsCostLabel
         totalCostLabel.textColor = AppColors.Labels.blue
-        totalCostLabel.textAlignment = .left
+        totalCostLabel.textAlignment = .right
         totalCostLabel.numberOfLines = 1
         
         addSubview(totalCostLabel)
@@ -134,7 +127,7 @@ extension MyOrdersTableViewCell {
             make.top.equalToSuperview().inset(24)
             make.right.equalToSuperview()
             make.height.equalTo(24)
-            make.width.equalTo(45)
+            make.width.equalTo(70)
         }
     }
 }

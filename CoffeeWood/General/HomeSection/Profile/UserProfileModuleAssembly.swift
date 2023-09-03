@@ -1,10 +1,3 @@
-//
-//  UserProfileModuleAssembly.swift
-//  CoffeeWood
-//
-//  Created by Роман Хилюк on 29.07.2023.
-//
-
 import Foundation
 import UIKit
 

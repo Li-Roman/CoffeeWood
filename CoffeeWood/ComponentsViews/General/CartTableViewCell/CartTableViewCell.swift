@@ -1,10 +1,3 @@
-//
-//  ProductCell.swift
-//  CoffeeWood
-//
-//  Created by Роман Хилюк on 17.08.2023.
-//
-
 import Foundation
 import UIKit
 

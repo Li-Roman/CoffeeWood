@@ -1,10 +1,3 @@
-//
-//  HomeViewController.swift
-//  CoffeeWood
-//
-//  Created by Роман Хилюк on 20.07.2023.
-//
-
 import Foundation
 import UIKit
 import SnapKit
@@ -53,8 +46,6 @@ class HomeController: UIViewController {
         setupNavBar()
         delegate?.willShowUsername()
         delegate?.willShowCountLabel()
-//        delegate?.willShowCoffeeProducts()
-        print("viewWillAppear in HomeController")
     }
     
     required init?(coder: NSCoder) {
@@ -101,7 +92,6 @@ extension HomeController: HomeViewDelegate {
     }
     
     func willShowCoffeeProducts() {
-        print("willShowCoffeeProducts in controller")
         delegate?.willShowCoffeeProducts()
     }
     
@@ -117,13 +107,10 @@ extension HomeController: HomeViewDelegate {
 // MARK: - HomeControllerInterface
 extension HomeController: HomeControllerInterface {
     func presentCoffeeProducts(products: [CoffeeProduct]) {
-//        homeView.dataSource = products
-        print("presentCoffeeProducts in HomeController")
         homeView?.presentProducts(products)
     }
     
     func pushCartController() {
-        print("pushCartController in HomeController")
         let myCartController = MyCartModuleAssembly.configureMoule()
         myCartController.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(myCartController, animated: true)

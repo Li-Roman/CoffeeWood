@@ -1,10 +1,3 @@
-//
-//  QuanitySelectionSection.swift
-//  CoffeeWood
-//
-//  Created by Роман Хилюк on 13.08.2023.
-//
-
 import Foundation
 import UIKit
 import SnapKit
@@ -83,6 +76,7 @@ extension QuanitySectionView {
     }
 }
 
+// MARK: - CustomStepperDelegate
 extension QuanitySectionView: CustomStepperDelegate {
     func updateCount(count: Int) {
         delegate?.updateQuanity(count: count)

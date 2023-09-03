@@ -1,10 +1,3 @@
-//
-//  AuthViewWithTextField.swift
-//  CoffeeWood
-//
-//  Created by Роман Хилюк on 25.07.2023.
-//
-
 import Foundation
 import UIKit
 import SnapKit

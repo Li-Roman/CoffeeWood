@@ -1,20 +1,20 @@
-//
-//  CartPositionCount.swift
-//  CoffeeWood
-//
-//  Created by Роман Хилюк on 20.08.2023.
-//
-
 import Foundation
 import UIKit
 import SnapKit
 
+protocol CartPositionsCountViewDelegate: AnyObject {
+    func didTapAction()
+}
+
 class CartPositionsCountView: UIView {
+    
+    weak var delegate: CartPositionsCountViewDelegate?
     
     private let countLabel = UILabel()
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    init(delegate: CartPositionsCountViewDelegate) {
+        self.delegate = delegate
+        super.init(frame: .zero)
         setupView()
     }
     
@@ -23,11 +23,14 @@ class CartPositionsCountView: UIView {
     }
     
     func updateCountNumber(for count: Int) {
-        self.countLabel.text = "\(count)"
+        DispatchQueue.main.async {
+            self.countLabel.text = "\(count)"
+        }
     }
     
     // MARK: - Setup View
     private func setupView() {
+        setupGestureRecognizer()
         backgroundColor = .systemRed
         
         addSubview(countLabel)
@@ -37,5 +40,15 @@ class CartPositionsCountView: UIView {
         countLabel.textColor = .white
         countLabel.textAlignment = .center
         countLabel.font = UIFont(name: "Poppins-SemiBold", size: 10)
+    }
+    
+    private func setupGestureRecognizer() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector (tapAction))
+        addGestureRecognizer(tap)
+    }
+    
+    // MARK: - Actions
+    @objc private func tapAction() {
+        delegate?.didTapAction()
     }
 }

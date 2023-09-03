@@ -1,10 +1,3 @@
-//
-//  ShotSection.swift
-//  CoffeeWood
-//
-//  Created by Роман Хилюк on 13.08.2023.
-//
-
 import Foundation
 import UIKit
 import SnapKit
@@ -34,6 +27,7 @@ class ShotSectionView: UIView {
     }
 }
 
+// MARK: - Setup View
 extension ShotSectionView {
     private func setupView() {
         setupShotLabel()
@@ -107,6 +101,7 @@ extension ShotSectionView {
     }
 }
 
+// MARK: -  Actions
 extension ShotSectionView {
     @objc private func singleButtonAction(sender: UIButton) {
         singleButton.layer.borderColor = AppColors.Buttons.Back.darkBlue.cgColor

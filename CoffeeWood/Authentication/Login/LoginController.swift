@@ -1,10 +1,3 @@
-//
-//  LoginViewController.swift
-//  CoffeeWood
-//
-//  Created by Роман Хилюк on 19.07.2023.
-//
-
 import Foundation
 import UIKit
 import SnapKit
@@ -106,14 +99,7 @@ extension LoginController: LoginControllerInterface {
         
         (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(tabbarController)
     }
-//    
-//    func showTabbarController() {
-//        let tabbarController = GeneralTabBatController()
-//        tabbarController.modalTransitionStyle = .flipHorizontal
-//        tabbarController.modalPresentationStyle = .fullScreen
-//        present(tabbarController, animated: true)
-//    }
-    
+
     func showResetPasswordConrtoller() {
         let viewConrtoller = ResetPasswordModuleAssembly.configureModule()
         navigationController?.pushViewController(viewConrtoller, animated: true)

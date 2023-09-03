@@ -1,10 +1,3 @@
-//
-//  Resources.swift
-//  CoffeeWood
-//
-//  Created by Роман Хилюк on 06.08.2023.
-//
-
 import Foundation
 import UIKit
 
@@ -14,6 +7,7 @@ enum AppColors {
         static let blueBack = UIColor(hexString: "#324A59")
         static let grayBack = UIColor(hexString: "#F7F8FB")
         static let brown = UIColor(hexString: "#E4D5C9")
+        static let darkBlue = UIColor(hexString: "#001833")
     }
     
     enum Buttons {
@@ -22,6 +16,7 @@ enum AppColors {
             static let pink = UIColor(hexString: "#FFE5E5")
             static let red = UIColor(hexString: "#FF3030")
             static let darkBlue = UIColor(hexString: "#001833")
+            static let lightBlue = UIColor(hexString: "#839DAD")
             static let white = UIColor(hexString: "#FFFFFF")
         }
         
@@ -47,6 +42,7 @@ enum AppColors {
         static let gray = UIColor(hexString: "#98A4AC")
         static let lightGray = UIColor(hexString: "#D8D8D8")
         static let darktGray = UIColor(hexString: "#6A6B6C")
+        static let warmGray = UIColor(hexString: "#D2D7DA")
     }
     
     enum TextField {

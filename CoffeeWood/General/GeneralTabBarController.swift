@@ -1,16 +1,9 @@
-//
-//  GeneralTabBarController.swift
-//  CoffeeWood
-//
-//  Created by Роман Хилюк on 05.08.2023.
-//
-
 import Foundation
 import UIKit
 
 enum GeneralTabs: Int {
     case homeSection
-    case rewardSection
+    case mapSection
     case orderSection
 }
 
@@ -64,8 +57,8 @@ final class GeneralTabBatController: UITabBarController {
         let homeController = HomeModuleAssembly.configureModule()
         let homNavController = UINavigationController(rootViewController: homeController)
         
-        let rewardsController = RewardsViewController()
-        let rewardNavigationController = UINavigationController(rootViewController: rewardsController)
+        let mapController = MapModuleAssembly.configureModule()
+        let mapNavigationController = UINavigationController(rootViewController: mapController)
         
         let orderController = MyOrdersModuleAssembly.configureModule()
         let orderNavigationController = UINavigationController(rootViewController: orderController)
@@ -73,15 +66,15 @@ final class GeneralTabBatController: UITabBarController {
         homNavController.tabBarItem = UITabBarItem(title: nil,
                                                  image: Resources.Images.TabBar.homeSection,
                                                  tag: GeneralTabs.homeSection.rawValue)
-        rewardNavigationController.tabBarItem = UITabBarItem(title: nil,
+        mapNavigationController.tabBarItem = UITabBarItem(title: nil,
                                                  image: Resources.Images.TabBar.rewardSection,
-                                                 tag: GeneralTabs.rewardSection.rawValue)
+                                                          tag: GeneralTabs.mapSection.rawValue)
         orderNavigationController.tabBarItem = UITabBarItem(title: nil,
                                                  image: Resources.Images.TabBar.orderSection,
                                                  tag: GeneralTabs.orderSection.rawValue)
         setViewControllers([
             homNavController,
-            rewardNavigationController,
+            mapNavigationController,
             orderNavigationController
         ], animated: false)
     }

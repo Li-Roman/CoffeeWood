@@ -1,10 +1,3 @@
-//
-//  NextButton.swift
-//  CoffeeWood
-//
-//  Created by Роман Хилюк on 19.07.2023.
-//
-
 import Foundation
 import UIKit
 
@@ -28,6 +21,7 @@ extension CircleNextButton {
         let image = UIImage(systemName: "arrow.right")!.withConfiguration(config)
         
         configuration?.image = image.withTintColor(AppColors.Buttons.Icon.whiteIcon)
+        
     }
 }
 
