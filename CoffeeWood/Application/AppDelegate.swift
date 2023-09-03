@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  CoffeeWood
-//
-//  Created by Роман Хилюк on 18.07.2023.
-//
-
 import UIKit
 import FirebaseCore
 

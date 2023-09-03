@@ -1,11 +1,6 @@
-//
-//  SceneDelegate.swift
-//  CoffeeWood
-//
-//  Created by Роман Хилюк on 18.07.2023.
-//
-
 import UIKit
+
+let screenSize: CGRect = UIScreen.main.bounds
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -18,17 +13,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if let _ = AuthService.shared.currentUser {
             let tabbarController = GeneralTabBatController()
             window?.rootViewController = tabbarController
-
         } else {
             let viewController = OnboardingModuleAssembly.configureModule()
             let navController = UINavigationController(rootViewController: viewController)
             window?.rootViewController = navController
         }
-        
-//        let presenter = RewardsPresenter()
-//        let viewController = RewardsController(with: presenter)
-//        window?.rootViewController = viewController
-        
+
         window?.makeKeyAndVisible()
     }
     

@@ -1,10 +1,3 @@
-//
-//  DetailPresenter.swift
-//  CoffeeWood
-//
-//  Created by Роман Хилюк on 13.08.2023.
-//
-
 import Foundation
 import UIKit
 
@@ -40,7 +33,7 @@ class DetailPresenter {
                                          cupSize: cartPosition.cupSize,
                                          iceAmount: cartPosition.iceAmount)
         
-        DatabaseService.shared.addCartPosition(to: userID, positions: positionToAdd) { [weak self] error in
+        DatabaseService.shared.serCartPosition(to: userID, positions: positionToAdd) { [weak self] error in
             guard let self = self else { return }
             if let error = error {
                 self.showAlert((self.configureAlertControlelr(title: "\(error.localizedDescription)")))
@@ -57,7 +50,7 @@ class DetailPresenter {
                 self.userID = user.id
                 completion(.success(user))
             case .failure(let error):
-                print("\(error.localizedDescription) in getUser in DetailPresenter")
+                print(error.localizedDescription)
             }
         }
     }
@@ -79,7 +72,6 @@ class DetailPresenter {
     }
     
     private func configureAlertControlelr(title: String) -> UIAlertController {
-        print("Configure alert controller")
         let alertController = UIAlertController(title: title, message: "", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "ok", style: .default)
         alertController.addAction(okAction)
@@ -96,7 +88,7 @@ class DetailPresenter {
                 case .success(let user):
                     self.getPositions(user.id, animate: animate)
                 case .failure(let error):
-                    print("\(error.localizedDescription) in getUser in DetailPresenter")
+                    print(error.localizedDescription)
                 }
             }
         }
@@ -109,7 +101,7 @@ class DetailPresenter {
             case .success(let positions):
                 self.viewController?.updateCartCountLabel(withAnimate: animate, count: positions.count)
             case .failure(let error):
-                print("Error in DetailPresenter - error = \(error.localizedDescription)")
+                print(error.localizedDescription)
             }
         }
     }

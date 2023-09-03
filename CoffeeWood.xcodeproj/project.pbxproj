@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3132D7492A7EBD64000C1679 /* GeneralTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3132D7482A7EBD64000C1679 /* GeneralTabBarController.swift */; };
-		3132D7512A7EF56C000C1679 /* RewardsViewController .swift in Sources */ = {isa = PBXBuildFile; fileRef = 3132D7502A7EF56C000C1679 /* RewardsViewController .swift */; };
+		3132D7512A7EF56C000C1679 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3132D7502A7EF56C000C1679 /* MapController.swift */; };
 		3132D7532A7EF69F000C1679 /* MyOrdersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3132D7522A7EF69F000C1679 /* MyOrdersController.swift */; };
 		3132D7562A7FDD40000C1679 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3132D7552A7FDD40000C1679 /* AppColors.swift */; };
 		3132D7582A7FDDCD000C1679 /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3132D7572A7FDDCD000C1679 /* Resources.swift */; };
@@ -22,7 +22,6 @@
 		3132D7722A8154C7000C1679 /* CoffeeProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3132D7712A8154C7000C1679 /* CoffeeProduct.swift */; };
 		3132D7742A815F5D000C1679 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3132D7732A815F5D000C1679 /* StorageService.swift */; };
 		3132D7762A816F84000C1679 /* CartPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3132D7752A816F84000C1679 /* CartPosition.swift */; };
-		3132D77C2A841E88000C1679 /* RewardsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3132D77B2A841E88000C1679 /* RewardsPresenter.swift */; };
 		3132D77E2A8930E5000C1679 /* DetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3132D77D2A8930E5000C1679 /* DetailController.swift */; };
 		3132D7802A893161000C1679 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3132D77F2A893161000C1679 /* DetailView.swift */; };
 		3132D7822A8931C1000C1679 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3132D7812A8931C1000C1679 /* DetailPresenter.swift */; };
@@ -35,14 +34,12 @@
 		3132D7912A8A809C000C1679 /* CupSizeSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3132D7902A8A809C000C1679 /* CupSizeSectionView.swift */; };
 		3132D7932A8A9C5B000C1679 /* IceAmountSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3132D7922A8A9C5B000C1679 /* IceAmountSectionView.swift */; };
 		3132D7952A8B7FE0000C1679 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3132D7942A8B7FE0000C1679 /* Order.swift */; };
-		3132D7972A8C254C000C1679 /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3132D7962A8C254C000C1679 /* Cart.swift */; };
 		3132D7992A8E53D1000C1679 /* MyCartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3132D7982A8E53D1000C1679 /* MyCartController.swift */; };
 		3132D79B2A8E5473000C1679 /* MyCartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3132D79A2A8E5473000C1679 /* MyCartView.swift */; };
 		3132D79D2A8E5577000C1679 /* MyCartPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3132D79C2A8E5577000C1679 /* MyCartPresenter.swift */; };
 		3132D79F2A8E55C0000C1679 /* MyCartModuleAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3132D79E2A8E55C0000C1679 /* MyCartModuleAssembly.swift */; };
 		3132D7A12A8E6DD5000C1679 /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3132D7A02A8E6DD5000C1679 /* Poppins-Light.ttf */; };
 		3132D7A42A8E7C65000C1679 /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3132D7A32A8E7C65000C1679 /* CartTableViewCell.swift */; };
-		3132D7A62A8EB479000C1679 /* CartPositionRAW.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3132D7A52A8EB479000C1679 /* CartPositionRAW.swift */; };
 		3132D7A82A916854000C1679 /* CartPositionCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3132D7A72A916854000C1679 /* CartPositionCountView.swift */; };
 		3132D7AA2A927E08000C1679 /* OrderConfirmationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3132D7A92A927E08000C1679 /* OrderConfirmationController.swift */; };
 		3132D7AC2A927E75000C1679 /* OrderConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3132D7AB2A927E75000C1679 /* OrderConfirmationView.swift */; };
@@ -53,6 +50,8 @@
 		3132D7B62A929C07000C1679 /* MyOrdersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3132D7B52A929C07000C1679 /* MyOrdersView.swift */; };
 		3132D7B92A9389E7000C1679 /* MyOrdersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3132D7B82A9389E7000C1679 /* MyOrdersTableViewCell.swift */; };
 		3132D7BB2A941B4F000C1679 /* BankCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3132D7BA2A941B4F000C1679 /* BankCardView.swift */; };
+		3132D7BF2A953636000C1679 /* MapPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3132D7BE2A953636000C1679 /* MapPresenter.swift */; };
+		3132D7C12A9536D9000C1679 /* MapModuleAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3132D7C02A9536D9000C1679 /* MapModuleAssembly.swift */; };
 		3135D6742A7AB2DA00BB1182 /* AuthSectionViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3135D6732A7AB2DA00BB1182 /* AuthSectionViewType.swift */; };
 		3135D6762A7BBD2500BB1182 /* AlertControllerMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3135D6752A7BBD2500BB1182 /* AlertControllerMaker.swift */; };
 		3135D6792A7BD31E00BB1182 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3135D6782A7BD31E00BB1182 /* UserDefaultsManager.swift */; };
@@ -64,6 +63,14 @@
 		313675AE2A6F27F900B1E63A /* MainLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313675AD2A6F27F900B1E63A /* MainLabel.swift */; };
 		313675B02A6F2F7000B1E63A /* SubLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313675AF2A6F2F7000B1E63A /* SubLabel.swift */; };
 		313675B62A700E2C00B1E63A /* AuthViewWithTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313675B52A700E2C00B1E63A /* AuthViewWithTextField.swift */; };
+		3138580D2A99468E00707347 /* CoffeeHouseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3138580C2A99468E00707347 /* CoffeeHouseController.swift */; };
+		313858102A994F9500707347 /* OrderChosingSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3138580F2A994F9500707347 /* OrderChosingSectionView.swift */; };
+		313858122A9A601400707347 /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313858112A9A601400707347 /* DoubleExtension.swift */; };
+		313858142A9A7F9F00707347 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313858132A9A7F9F00707347 /* DateExtension.swift */; };
+		313858162A9B45F200707347 /* AddressPickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313858152A9B45F200707347 /* AddressPickerController.swift */; };
+		313858182A9B69D100707347 /* TimePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313858172A9B69D100707347 /* TimePickerController.swift */; };
+		3138581D2A9F507B00707347 /* OrderStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3138581C2A9F507B00707347 /* OrderStatusView.swift */; };
+		313858212A9F72C200707347 /* OrderStatusSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313858202A9F72C200707347 /* OrderStatusSectionView.swift */; };
 		314B17962A66CCB100F27C77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314B17952A66CCB100F27C77 /* AppDelegate.swift */; };
 		314B17982A66CCB100F27C77 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314B17972A66CCB100F27C77 /* SceneDelegate.swift */; };
 		314B179A2A66CCB100F27C77 /* OnboarnigController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314B17992A66CCB100F27C77 /* OnboarnigController.swift */; };
@@ -99,6 +106,7 @@
 		31B0980E2A6C02B100CB99BE /* AuthHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B0980D2A6C02B100CB99BE /* AuthHelper.swift */; };
 		31B098102A6C898A00CB99BE /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B0980F2A6C898A00CB99BE /* DatabaseService.swift */; };
 		31B098132A6C8AC400CB99BE /* DDUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B098122A6C8AC400CB99BE /* DDUser.swift */; };
+		31BBA42A2A968EE4000D70CC /* CoffeeHouseAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BBA4292A968EE4000D70CC /* CoffeeHouseAnnotation.swift */; };
 		31C23CD82A7569C300B1C965 /* UserProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C23CD72A7569C300B1C965 /* UserProfileController.swift */; };
 		31C23CDD2A756A5200B1C965 /* UserProfileModuleAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C23CDC2A756A5200B1C965 /* UserProfileModuleAssembly.swift */; };
 		31C23CE52A756B9D00B1C965 /* UserProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C23CE42A756B9D00B1C965 /* UserProfilePresenter.swift */; };
@@ -117,7 +125,7 @@
 
 /* Begin PBXFileReference section */
 		3132D7482A7EBD64000C1679 /* GeneralTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralTabBarController.swift; sourceTree = "<group>"; };
-		3132D7502A7EF56C000C1679 /* RewardsViewController .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RewardsViewController .swift"; sourceTree = "<group>"; };
+		3132D7502A7EF56C000C1679 /* MapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
 		3132D7522A7EF69F000C1679 /* MyOrdersController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOrdersController.swift; sourceTree = "<group>"; };
 		3132D7552A7FDD40000C1679 /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 		3132D7572A7FDDCD000C1679 /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
@@ -131,7 +139,6 @@
 		3132D7712A8154C7000C1679 /* CoffeeProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeProduct.swift; sourceTree = "<group>"; };
 		3132D7732A815F5D000C1679 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		3132D7752A816F84000C1679 /* CartPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartPosition.swift; sourceTree = "<group>"; };
-		3132D77B2A841E88000C1679 /* RewardsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardsPresenter.swift; sourceTree = "<group>"; };
 		3132D77D2A8930E5000C1679 /* DetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailController.swift; sourceTree = "<group>"; };
 		3132D77F2A893161000C1679 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		3132D7812A8931C1000C1679 /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
@@ -144,14 +151,12 @@
 		3132D7902A8A809C000C1679 /* CupSizeSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CupSizeSectionView.swift; sourceTree = "<group>"; };
 		3132D7922A8A9C5B000C1679 /* IceAmountSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IceAmountSectionView.swift; sourceTree = "<group>"; };
 		3132D7942A8B7FE0000C1679 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
-		3132D7962A8C254C000C1679 /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
 		3132D7982A8E53D1000C1679 /* MyCartController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCartController.swift; sourceTree = "<group>"; };
 		3132D79A2A8E5473000C1679 /* MyCartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCartView.swift; sourceTree = "<group>"; };
 		3132D79C2A8E5577000C1679 /* MyCartPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCartPresenter.swift; sourceTree = "<group>"; };
 		3132D79E2A8E55C0000C1679 /* MyCartModuleAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCartModuleAssembly.swift; sourceTree = "<group>"; };
 		3132D7A02A8E6DD5000C1679 /* Poppins-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Light.ttf"; sourceTree = "<group>"; };
 		3132D7A32A8E7C65000C1679 /* CartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
-		3132D7A52A8EB479000C1679 /* CartPositionRAW.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartPositionRAW.swift; sourceTree = "<group>"; };
 		3132D7A72A916854000C1679 /* CartPositionCountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartPositionCountView.swift; sourceTree = "<group>"; };
 		3132D7A92A927E08000C1679 /* OrderConfirmationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderConfirmationController.swift; sourceTree = "<group>"; };
 		3132D7AB2A927E75000C1679 /* OrderConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderConfirmationView.swift; sourceTree = "<group>"; };
@@ -162,6 +167,8 @@
 		3132D7B52A929C07000C1679 /* MyOrdersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOrdersView.swift; sourceTree = "<group>"; };
 		3132D7B82A9389E7000C1679 /* MyOrdersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOrdersTableViewCell.swift; sourceTree = "<group>"; };
 		3132D7BA2A941B4F000C1679 /* BankCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankCardView.swift; sourceTree = "<group>"; };
+		3132D7BE2A953636000C1679 /* MapPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPresenter.swift; sourceTree = "<group>"; };
+		3132D7C02A9536D9000C1679 /* MapModuleAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapModuleAssembly.swift; sourceTree = "<group>"; };
 		3135D6732A7AB2DA00BB1182 /* AuthSectionViewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthSectionViewType.swift; sourceTree = "<group>"; };
 		3135D6752A7BBD2500BB1182 /* AlertControllerMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertControllerMaker.swift; sourceTree = "<group>"; };
 		3135D6782A7BD31E00BB1182 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
@@ -172,6 +179,14 @@
 		313675AD2A6F27F900B1E63A /* MainLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainLabel.swift; sourceTree = "<group>"; };
 		313675AF2A6F2F7000B1E63A /* SubLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubLabel.swift; sourceTree = "<group>"; };
 		313675B52A700E2C00B1E63A /* AuthViewWithTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewWithTextField.swift; sourceTree = "<group>"; };
+		3138580C2A99468E00707347 /* CoffeeHouseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeHouseController.swift; sourceTree = "<group>"; };
+		3138580F2A994F9500707347 /* OrderChosingSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderChosingSectionView.swift; sourceTree = "<group>"; };
+		313858112A9A601400707347 /* DoubleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExtension.swift; sourceTree = "<group>"; };
+		313858132A9A7F9F00707347 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		313858152A9B45F200707347 /* AddressPickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressPickerController.swift; sourceTree = "<group>"; };
+		313858172A9B69D100707347 /* TimePickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePickerController.swift; sourceTree = "<group>"; };
+		3138581C2A9F507B00707347 /* OrderStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStatusView.swift; sourceTree = "<group>"; };
+		313858202A9F72C200707347 /* OrderStatusSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStatusSectionView.swift; sourceTree = "<group>"; };
 		314B17922A66CCB100F27C77 /* CoffeeWood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoffeeWood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		314B17952A66CCB100F27C77 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		314B17972A66CCB100F27C77 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -199,6 +214,7 @@
 		31B0980D2A6C02B100CB99BE /* AuthHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthHelper.swift; sourceTree = "<group>"; };
 		31B0980F2A6C898A00CB99BE /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
 		31B098122A6C8AC400CB99BE /* DDUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDUser.swift; sourceTree = "<group>"; };
+		31BBA4292A968EE4000D70CC /* CoffeeHouseAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeHouseAnnotation.swift; sourceTree = "<group>"; };
 		31C23CD72A7569C300B1C965 /* UserProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileController.swift; sourceTree = "<group>"; };
 		31C23CDC2A756A5200B1C965 /* UserProfileModuleAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileModuleAssembly.swift; sourceTree = "<group>"; };
 		31C23CE42A756B9D00B1C965 /* UserProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfilePresenter.swift; sourceTree = "<group>"; };
@@ -237,13 +253,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3132D7412A7EB02E000C1679 /* RewardsSection */ = {
+		3132D7412A7EB02E000C1679 /* MapSection */ = {
 			isa = PBXGroup;
 			children = (
-				3132D7502A7EF56C000C1679 /* RewardsViewController .swift */,
-				3132D77B2A841E88000C1679 /* RewardsPresenter.swift */,
+				3138580B2A99463300707347 /* CoffeeHouse */,
+				3132D7502A7EF56C000C1679 /* MapController.swift */,
+				3132D7BE2A953636000C1679 /* MapPresenter.swift */,
+				3132D7C02A9536D9000C1679 /* MapModuleAssembly.swift */,
 			);
-			path = RewardsSection;
+			path = MapSection;
 			sourceTree = "<group>";
 		};
 		3132D7422A7EB04B000C1679 /* MyOrdersSection */ = {
@@ -261,8 +279,8 @@
 			isa = PBXGroup;
 			children = (
 				314B18092A68932800F27C77 /* HomeController.swift */,
-				3132D7642A813E8F000C1679 /* HomeView */,
-				3132D7652A813E9F000C1679 /* HomePresenter */,
+				3132D7592A7FFB38000C1679 /* HomeView.swift */,
+				3132D75B2A8024B0000C1679 /* HomePresenter.swift */,
 				3132D75D2A80291C000C1679 /* HomeModuleAssembly.swift */,
 			);
 			path = Home;
@@ -297,15 +315,10 @@
 				3132D7AB2A927E75000C1679 /* OrderConfirmationView.swift */,
 				3132D7AD2A927F4D000C1679 /* OrderConfirmationPresenter.swift */,
 				3132D7AF2A927FDB000C1679 /* OrderConfirmationModuleAssembly.swift */,
+				313858152A9B45F200707347 /* AddressPickerController.swift */,
+				313858172A9B69D100707347 /* TimePickerController.swift */,
 			);
 			path = OrderConfirmation;
-			sourceTree = "<group>";
-		};
-		3132D7472A7EBBA4000C1679 /* OrderSuccess */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = OrderSuccess;
 			sourceTree = "<group>";
 		};
 		3132D74A2A7EBE4F000C1679 /* AuthHelper */ = {
@@ -348,22 +361,16 @@
 		3132D74E2A7ED292000C1679 /* General */ = {
 			isa = PBXGroup;
 			children = (
+				3138581F2A9F727900707347 /* OrderStatusSectionView */,
+				3138580E2A994F5800707347 /* OrderConfirmationSection */,
 				3132D7852A89516C000C1679 /* DetailsConfigurationSections */,
 				3132D7662A813F08000C1679 /* CoffeeProductCollectionViewCell */,
 				3132D7A22A8E7C4A000C1679 /* CartTableViewCell */,
 				3132D7B72A938986000C1679 /* MyOrdersTableViewCell */,
 				318B2F682A76857F001F694F /* UserProfileSectionView */,
 				3132D7A72A916854000C1679 /* CartPositionCountView.swift */,
-				3132D7BA2A941B4F000C1679 /* BankCardView.swift */,
 			);
 			path = General;
-			sourceTree = "<group>";
-		};
-		3132D74F2A7EF40F000C1679 /* TrackMyOrder */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = TrackMyOrder;
 			sourceTree = "<group>";
 		};
 		3132D7542A7FDD19000C1679 /* Resorces */ = {
@@ -373,22 +380,6 @@
 				3132D7572A7FDDCD000C1679 /* Resources.swift */,
 			);
 			path = Resorces;
-			sourceTree = "<group>";
-		};
-		3132D7642A813E8F000C1679 /* HomeView */ = {
-			isa = PBXGroup;
-			children = (
-				3132D7592A7FFB38000C1679 /* HomeView.swift */,
-			);
-			path = HomeView;
-			sourceTree = "<group>";
-		};
-		3132D7652A813E9F000C1679 /* HomePresenter */ = {
-			isa = PBXGroup;
-			children = (
-				3132D75B2A8024B0000C1679 /* HomePresenter.swift */,
-			);
-			path = HomePresenter;
 			sourceTree = "<group>";
 		};
 		3132D7662A813F08000C1679 /* CoffeeProductCollectionViewCell */ = {
@@ -479,27 +470,37 @@
 			isa = PBXGroup;
 			children = (
 				313675992A6F1E8300B1E63A /* ResetPasswordController.swift */,
-				3136759B2A6F1F3200B1E63A /* ResetPasswordView */,
-				3136759D2A6F1F4C00B1E63A /* Presenter */,
+				313675A62A6F206400B1E63A /* ResetPasswordView.swift */,
+				313675AB2A6F21C400B1E63A /* ResetPasswordPresenter.swift */,
 				3136759E2A6F1F6C00B1E63A /* ResetPasswordModuleAssembly.swift */,
 			);
 			path = ResetPassword;
 			sourceTree = "<group>";
 		};
-		3136759B2A6F1F3200B1E63A /* ResetPasswordView */ = {
+		3138580B2A99463300707347 /* CoffeeHouse */ = {
 			isa = PBXGroup;
 			children = (
-				313675A62A6F206400B1E63A /* ResetPasswordView.swift */,
+				3138580C2A99468E00707347 /* CoffeeHouseController.swift */,
+				3138581C2A9F507B00707347 /* OrderStatusView.swift */,
 			);
-			path = ResetPasswordView;
+			path = CoffeeHouse;
 			sourceTree = "<group>";
 		};
-		3136759D2A6F1F4C00B1E63A /* Presenter */ = {
+		3138580E2A994F5800707347 /* OrderConfirmationSection */ = {
 			isa = PBXGroup;
 			children = (
-				313675AB2A6F21C400B1E63A /* ResetPasswordPresenter.swift */,
+				3138580F2A994F9500707347 /* OrderChosingSectionView.swift */,
+				3132D7BA2A941B4F000C1679 /* BankCardView.swift */,
 			);
-			path = Presenter;
+			path = OrderConfirmationSection;
+			sourceTree = "<group>";
+		};
+		3138581F2A9F727900707347 /* OrderStatusSectionView */ = {
+			isa = PBXGroup;
+			children = (
+				313858202A9F72C200707347 /* OrderStatusSectionView.swift */,
+			);
+			path = OrderStatusSectionView;
 			sourceTree = "<group>";
 		};
 		314B17892A66CCB100F27C77 = {
@@ -558,27 +559,11 @@
 			isa = PBXGroup;
 			children = (
 				314B17992A66CCB100F27C77 /* OnboarnigController.swift */,
-				314B17AC2A66D77300F27C77 /* OnboardingView */,
-				314B17B12A66D7F100F27C77 /* Presenter */,
+				314B17AD2A66D7B100F27C77 /* OnboardingView.swift */,
+				314B17D02A671CFB00F27C77 /* OnboardingViewPresenter.swift */,
 				314B17B32A66D85600F27C77 /* OnboardingModuleAssembly.swift */,
 			);
 			path = Onboarding;
-			sourceTree = "<group>";
-		};
-		314B17AC2A66D77300F27C77 /* OnboardingView */ = {
-			isa = PBXGroup;
-			children = (
-				314B17AD2A66D7B100F27C77 /* OnboardingView.swift */,
-			);
-			path = OnboardingView;
-			sourceTree = "<group>";
-		};
-		314B17B12A66D7F100F27C77 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				314B17D02A671CFB00F27C77 /* OnboardingViewPresenter.swift */,
-			);
-			path = Presenter;
 			sourceTree = "<group>";
 		};
 		314B17B52A66D93300F27C77 /* FirebaseManager */ = {
@@ -595,8 +580,8 @@
 			isa = PBXGroup;
 			children = (
 				314B17D72A673AC700F27C77 /* LoginController.swift */,
-				314B17E22A682AB800F27C77 /* LoginView */,
-				314B17E32A682B5F00F27C77 /* Presenter */,
+				314B17E72A682E9600F27C77 /* LoginView.swift */,
+				314B17F32A68557000F27C77 /* LoginViewPresenter.swift */,
 				314B17E52A682C4500F27C77 /* LoginModuleAssembly.swift */,
 			);
 			path = Login;
@@ -611,26 +596,12 @@
 			path = ComponentsViews;
 			sourceTree = "<group>";
 		};
-		314B17E22A682AB800F27C77 /* LoginView */ = {
-			isa = PBXGroup;
-			children = (
-				314B17E72A682E9600F27C77 /* LoginView.swift */,
-			);
-			path = LoginView;
-			sourceTree = "<group>";
-		};
-		314B17E32A682B5F00F27C77 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				314B17F32A68557000F27C77 /* LoginViewPresenter.swift */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
 		314B17EB2A68489400F27C77 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				314B17EC2A6848B100F27C77 /* UIColorExtension.swift */,
+				313858112A9A601400707347 /* DoubleExtension.swift */,
+				313858132A9A7F9F00707347 /* DateExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -651,27 +622,11 @@
 			isa = PBXGroup;
 			children = (
 				314B17F72A6860FA00F27C77 /* RegistrationController.swift */,
-				314B18052A6861BA00F27C77 /* RegisterView */,
-				314B18062A6861C500F27C77 /* Presenter */,
+				314B17FD2A68616000F27C77 /* RegistrationView.swift */,
+				314B17F92A68613100F27C77 /* RegistrationViewPresenter.swift */,
 				314B17FB2A68615400F27C77 /* RegistrationModuleAssembly.swift */,
 			);
 			path = Registration;
-			sourceTree = "<group>";
-		};
-		314B18052A6861BA00F27C77 /* RegisterView */ = {
-			isa = PBXGroup;
-			children = (
-				314B17FD2A68616000F27C77 /* RegistrationView.swift */,
-			);
-			path = RegisterView;
-			sourceTree = "<group>";
-		};
-		314B18062A6861C500F27C77 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				314B17F92A68613100F27C77 /* RegistrationViewPresenter.swift */,
-			);
-			path = Presenter;
 			sourceTree = "<group>";
 		};
 		314B18082A6892F500F27C77 /* General */ = {
@@ -679,7 +634,7 @@
 			children = (
 				3132D7482A7EBD64000C1679 /* GeneralTabBarController.swift */,
 				318B2F6C2A77DAEF001F694F /* HomeSection */,
-				3132D7412A7EB02E000C1679 /* RewardsSection */,
+				3132D7412A7EB02E000C1679 /* MapSection */,
 				3132D7422A7EB04B000C1679 /* MyOrdersSection */,
 			);
 			path = General;
@@ -701,8 +656,6 @@
 				3132D7442A7EB8EF000C1679 /* Details  */,
 				3132D7452A7EB90A000C1679 /* MyCart */,
 				3132D7462A7EB91B000C1679 /* OrderConfirmation */,
-				3132D7472A7EBBA4000C1679 /* OrderSuccess */,
-				3132D74F2A7EF40F000C1679 /* TrackMyOrder */,
 				31C23CD62A7568F100B1C965 /* Profile */,
 			);
 			path = HomeSection;
@@ -726,8 +679,7 @@
 				3132D7712A8154C7000C1679 /* CoffeeProduct.swift */,
 				3132D7752A816F84000C1679 /* CartPosition.swift */,
 				3132D7942A8B7FE0000C1679 /* Order.swift */,
-				3132D7962A8C254C000C1679 /* Cart.swift */,
-				3132D7A52A8EB479000C1679 /* CartPositionRAW.swift */,
+				31BBA4292A968EE4000D70CC /* CoffeeHouseAnnotation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -736,27 +688,11 @@
 			isa = PBXGroup;
 			children = (
 				31C23CD72A7569C300B1C965 /* UserProfileController.swift */,
-				31C23CD92A756A0700B1C965 /* UserProfileView */,
-				31C23CDA2A756A1C00B1C965 /* UserProfilePresenter */,
+				31C23CE62A756BAE00B1C965 /* UserProfileView.swift */,
+				31C23CE42A756B9D00B1C965 /* UserProfilePresenter.swift */,
 				31C23CDC2A756A5200B1C965 /* UserProfileModuleAssembly.swift */,
 			);
 			path = Profile;
-			sourceTree = "<group>";
-		};
-		31C23CD92A756A0700B1C965 /* UserProfileView */ = {
-			isa = PBXGroup;
-			children = (
-				31C23CE62A756BAE00B1C965 /* UserProfileView.swift */,
-			);
-			path = UserProfileView;
-			sourceTree = "<group>";
-		};
-		31C23CDA2A756A1C00B1C965 /* UserProfilePresenter */ = {
-			isa = PBXGroup;
-			children = (
-				31C23CE42A756B9D00B1C965 /* UserProfilePresenter.swift */,
-			);
-			path = UserProfilePresenter;
 			sourceTree = "<group>";
 		};
 		31FCF0CB2A7068BD005532FB /* Fonts */ = {
@@ -772,27 +708,11 @@
 			isa = PBXGroup;
 			children = (
 				31FCF0D32A713957005532FB /* VerificationController.swift */,
-				31FCF0D62A713964005532FB /* VerificationView */,
-				31FCF0D52A71395B005532FB /* Presenter */,
+				31FCF0E22A713A0F005532FB /* VerificationView.swift */,
+				31FCF0E02A7139FE005532FB /* VerificationViewPresenter.swift */,
 				31FCF0D82A7139BD005532FB /* VerificationModuleAssembly.swift */,
 			);
 			path = Verification;
-			sourceTree = "<group>";
-		};
-		31FCF0D52A71395B005532FB /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				31FCF0E02A7139FE005532FB /* VerificationViewPresenter.swift */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		31FCF0D62A713964005532FB /* VerificationView */ = {
-			isa = PBXGroup;
-			children = (
-				31FCF0E22A713A0F005532FB /* VerificationView.swift */,
-			);
-			path = VerificationView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -894,7 +814,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				31FCF0D92A7139BD005532FB /* VerificationModuleAssembly.swift in Sources */,
-				3132D7512A7EF56C000C1679 /* RewardsViewController .swift in Sources */,
+				3132D7512A7EF56C000C1679 /* MapController.swift in Sources */,
 				31C23CE92A75798200B1C965 /* UserInfoSectionView.swift in Sources */,
 				3132D7BB2A941B4F000C1679 /* BankCardView.swift in Sources */,
 				31C23CD82A7569C300B1C965 /* UserProfileController.swift in Sources */,
@@ -908,12 +828,12 @@
 				3135D6742A7AB2DA00BB1182 /* AuthSectionViewType.swift in Sources */,
 				3132D7992A8E53D1000C1679 /* MyCartController.swift in Sources */,
 				31C23CE52A756B9D00B1C965 /* UserProfilePresenter.swift in Sources */,
+				3132D7C12A9536D9000C1679 /* MapModuleAssembly.swift in Sources */,
 				3136759A2A6F1E8300B1E63A /* ResetPasswordController.swift in Sources */,
 				31B0980E2A6C02B100CB99BE /* AuthHelper.swift in Sources */,
 				31FCF0E32A713A0F005532FB /* VerificationView.swift in Sources */,
 				3132D7762A816F84000C1679 /* CartPosition.swift in Sources */,
 				3132D7B42A929AFD000C1679 /* MyOrdersModuleAssembly.swift in Sources */,
-				3132D77C2A841E88000C1679 /* RewardsPresenter.swift in Sources */,
 				3132D7AA2A927E08000C1679 /* OrderConfirmationController.swift in Sources */,
 				3132D7892A895C00000C1679 /* CustomStepper.swift in Sources */,
 				3136759F2A6F1F6C00B1E63A /* ResetPasswordModuleAssembly.swift in Sources */,
@@ -923,6 +843,7 @@
 				3132D79D2A8E5577000C1679 /* MyCartPresenter.swift in Sources */,
 				31C23CDD2A756A5200B1C965 /* UserProfileModuleAssembly.swift in Sources */,
 				314B17FC2A68615400F27C77 /* RegistrationModuleAssembly.swift in Sources */,
+				313858122A9A601400707347 /* DoubleExtension.swift in Sources */,
 				3132D7742A815F5D000C1679 /* StorageService.swift in Sources */,
 				3132D7822A8931C1000C1679 /* DetailPresenter.swift in Sources */,
 				313675B62A700E2C00B1E63A /* AuthViewWithTextField.swift in Sources */,
@@ -932,26 +853,33 @@
 				3132D79F2A8E55C0000C1679 /* MyCartModuleAssembly.swift in Sources */,
 				313675AE2A6F27F900B1E63A /* MainLabel.swift in Sources */,
 				314B17982A66CCB100F27C77 /* SceneDelegate.swift in Sources */,
+				313858102A994F9500707347 /* OrderChosingSectionView.swift in Sources */,
 				3132D78B2A89769C000C1679 /* ShotSectionView.swift in Sources */,
 				3135D6792A7BD31E00BB1182 /* UserDefaultsManager.swift in Sources */,
+				313858182A9B69D100707347 /* TimePickerController.swift in Sources */,
 				3132D77E2A8930E5000C1679 /* DetailController.swift in Sources */,
 				3132D7722A8154C7000C1679 /* CoffeeProduct.swift in Sources */,
 				3132D7532A7EF69F000C1679 /* MyOrdersController.swift in Sources */,
 				3132D7A42A8E7C65000C1679 /* CartTableViewCell.swift in Sources */,
 				314B17B42A66D85600F27C77 /* OnboardingModuleAssembly.swift in Sources */,
+				313858162A9B45F200707347 /* AddressPickerController.swift in Sources */,
 				3132D75E2A80291C000C1679 /* HomeModuleAssembly.swift in Sources */,
-				3132D7A62A8EB479000C1679 /* CartPositionRAW.swift in Sources */,
 				31B098132A6C8AC400CB99BE /* DDUser.swift in Sources */,
 				3132D7842A8932A7000C1679 /* DetailModuleAssembly.swift in Sources */,
 				3132D75C2A8024B0000C1679 /* HomePresenter.swift in Sources */,
 				313675B02A6F2F7000B1E63A /* SubLabel.swift in Sources */,
 				3132D7802A893161000C1679 /* DetailView.swift in Sources */,
+				313858142A9A7F9F00707347 /* DateExtension.swift in Sources */,
 				3132D7AC2A927E75000C1679 /* OrderConfirmationView.swift in Sources */,
+				3138581D2A9F507B00707347 /* OrderStatusView.swift in Sources */,
+				313858212A9F72C200707347 /* OrderStatusSectionView.swift in Sources */,
 				31C23CE72A756BAE00B1C965 /* UserProfileView.swift in Sources */,
 				313675AC2A6F21C400B1E63A /* ResetPasswordPresenter.swift in Sources */,
 				3132D7912A8A809C000C1679 /* CupSizeSectionView.swift in Sources */,
 				314B180A2A68932800F27C77 /* HomeController.swift in Sources */,
 				31FCF0D42A713957005532FB /* VerificationController.swift in Sources */,
+				31BBA42A2A968EE4000D70CC /* CoffeeHouseAnnotation.swift in Sources */,
+				3138580D2A99468E00707347 /* CoffeeHouseController.swift in Sources */,
 				3132D7582A7FDDCD000C1679 /* Resources.swift in Sources */,
 				314B17DB2A681B1100F27C77 /* CircleNextButton.swift in Sources */,
 				3132D7682A813F7D000C1679 /* CoffeeProductCollectionViewCell.swift in Sources */,
@@ -961,7 +889,6 @@
 				3132D7562A7FDD40000C1679 /* AppColors.swift in Sources */,
 				3132D7B62A929C07000C1679 /* MyOrdersView.swift in Sources */,
 				3132D7932A8A9C5B000C1679 /* IceAmountSectionView.swift in Sources */,
-				3132D7972A8C254C000C1679 /* Cart.swift in Sources */,
 				3132D7872A8951C1000C1679 /* QuanitySectionView.swift in Sources */,
 				318B2F6E2A786453001F694F /* UserProfileSectionViewType.swift in Sources */,
 				314B17E82A682E9600F27C77 /* LoginView.swift in Sources */,
@@ -971,6 +898,7 @@
 				3132D7A82A916854000C1679 /* CartPositionCountView.swift in Sources */,
 				3132D79B2A8E5473000C1679 /* MyCartView.swift in Sources */,
 				31FCF0E52A716A14005532FB /* VerificationSectionView.swift in Sources */,
+				3132D7BF2A953636000C1679 /* MapPresenter.swift in Sources */,
 				3132D75A2A7FFB38000C1679 /* HomeView.swift in Sources */,
 				3132D7B92A9389E7000C1679 /* MyOrdersTableViewCell.swift in Sources */,
 				314B17CE2A671A6E00F27C77 /* AuthService.swift in Sources */,
@@ -1118,6 +1046,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CoffeeWood/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Please allow location access to use our app!";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -1150,6 +1079,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CoffeeWood/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Please allow location access to use our app!";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;

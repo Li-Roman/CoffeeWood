@@ -1,10 +1,3 @@
-//
-//  LoginModuleAssembly.swift
-//  CoffeeWood
-//
-//  Created by Роман Хилюк on 19.07.2023.
-//
-
 import Foundation
 import UIKit
 

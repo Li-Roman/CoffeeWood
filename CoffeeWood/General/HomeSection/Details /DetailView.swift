@@ -29,7 +29,7 @@ class DetailView: UIView {
     
     private let detailsLabel = UILabel()
     private let cartButton = UIButton()
-    private let cartPositionsCountView = CartPositionsCountView()
+    private var cartPositionsCountView: CartPositionsCountView!
     private let backArrowButton = UIButton()
     private let coffeeProductView = UIView()
     private let coffeeProductImageView = UIImageView()
@@ -165,6 +165,7 @@ extension DetailView {
     }
     
     private func setupCartPositionsCountView() {
+        cartPositionsCountView = CartPositionsCountView(delegate: self)
         cartPositionsCountView.isHidden = true
         cartPositionsCountView.layer.cornerRadius = 9
         cartPositionsCountView.clipsToBounds = true
@@ -328,5 +329,11 @@ extension DetailView: CupSizeSectioniewDelegate {
 extension DetailView: IceAmountSectionViewDelegate {
     func updateIceAmountType(for type: IceAmount) {
         delegate?.didIceAmountChange(for: type)
+    }
+}
+
+extension DetailView: CartPositionsCountViewDelegate {
+    func didTapAction() {
+        delegate?.didTappedCartButton()
     }
 }

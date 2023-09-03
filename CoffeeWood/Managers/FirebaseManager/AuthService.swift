@@ -1,10 +1,3 @@
-//
-//  APIManager.swift
-//  CoffeeWood
-//
-//  Created by Роман Хилюк on 18.07.2023.
-//
-
 import Foundation
 import UIKit
 import Firebase
@@ -50,8 +43,6 @@ final class AuthService {
                                     email: email,
                                     mobileNumber: mobileNumer,
                                     address: ""
-//                                    ordersID: "",
-//                                    cartID: ""
                                  )
                 
                 DatabaseService.shared.setUser(user: ddUser) { resultDB in

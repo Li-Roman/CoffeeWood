@@ -1,10 +1,3 @@
-//
-//  Resources.swift
-//  CoffeeWood
-//
-//  Created by Роман Хилюк on 06.08.2023.
-//
-
 import Foundation
 import UIKit
 
@@ -43,19 +36,30 @@ enum Resources {
         
         enum MyOrders {
             static let myOrdersLabel = "My Orders"
-            static let onGoingTitle = "On going"
+            static let onGoingTitle = "Active"
             static let historyTitle = "History"
         }
         
         enum OrderConfirmation {
             static let orderConfirmationLabel = "Order Confirmation"
-            static let deliveryAddress = "Delivery Address"
+            static let chooseAddressAndTimaLabel = "Choose Address and Time"
             static let subtotalLabel = "Subtotal"
+            static let onlineBankingMainLabel = "Online Banking"
+            static let creditCardMainLabel = "Credit Card"
+            static let onlineBankingSubLabel = "maybank2u (one-time)"
+            static let creditCardSubLabel = "2540 xxxx xxxx 2648"
             static let taxLabel = "Tax(10%)"
             static let deliveryFee = "Delivery fee"
             static let deliveryFeeCost = "$2.00"
             static let totalPriceLabel = "Total Price"
             static let payNowButton = "Pay Now"
+        }
+        
+        enum CoffeeHouseController {
+            static let acceptedLabel = "Accepted"
+            static let preparingLabel = "Preparing"
+            static let estimatedPickupLabel = "Estimated pickup time"
+            static let emptyOrderTitle = "Here will be your order status"
         }
     }
     
@@ -63,13 +67,13 @@ enum Resources {
     enum Images {
         enum TabBar {
             static let homeSection = UIImage(named: "home_tab")!
-            static let rewardSection = UIImage(named: "reward_tab")!
+            static let rewardSection = UIImage(named: "map_tab")!
             static let orderSection = UIImage(named: "order_tab")!
         }
         
         enum HomePage {
             static let cart = UIImage(named: "Cart")!
-            static let profile = UIImage(named: "Person")!
+            static let profile = UIImage(named: "person.png")!
         }
         
         enum Details {
@@ -100,12 +104,22 @@ enum Resources {
         }
         
         enum OrderConfirmation {
-            static let deliveryImage = UIImage(named: "delivery")
-            static let editImage = UIImage(named: "Edit")
+            static let addressImage = UIImage(named: "home")
+            static let workingHoursImage = UIImage(systemName: "clock")
             static let onlineBankImage = UIImage(named: "onlineBank")
-            static let masterCardImage = UIImage(named: "masterCard")
-            static let visaImage = UIImage(named: "visa")
+            static let credicCardPayment = UIImage(named: "creditCard.payment")
             static let paymentImage = UIImage(named: "payment")
+            static let chosingCircle = UIImage(named: "chosingCircle")
+        }
+        
+        enum CoffeeHouseController {
+            static let coffeeHouseIcon = UIImage(named: "coffeeHouseIcon")
+            static let routeButton = UIImage(named: "route")
+            static let callButton = UIImage(named: "phoneHandset.png")
+            static let emptyOrderImageView = UIImage(named: "list")
+            static let acceptedImageView = UIImage(named: "list")
+            static let preparingImageView = UIImage(named: "coffeePreparing")
+            static let completedImageVIew = UIImage(named: "cupSize")
         }
     }
     
@@ -147,9 +161,9 @@ enum Resources {
         }
         
         enum OrdersTableView {
-            static let productNameLabel = UIFont(name: "Poppins-Medium", size: 10)
-            static let addressLabel = UIFont(name: "Poppins-Medium", size: 10)
-            static let dateLabel = UIFont(name: "Poppins-Medium", size: 10)
+            static let productNameLabel = UIFont(name: "Poppins-Medium", size: 12)
+            static let addressLabel = UIFont(name: "Poppins-Medium", size: 12)
+            static let dateLabel = UIFont(name: "Poppins-Medium", size: 12)
             static let productsCostLabel = UIFont(name: "Poppins-Medium", size: 16)
         }
         
@@ -161,19 +175,29 @@ enum Resources {
         }
         
         enum OrderConfirmation {
-            static let orderConfirmationLabel = UIFont(name: "Poppins-Medium", size: 21)
-            static let deliveryAddress = UIFont(name: "Poppins-Medium", size: 15)
-            static let usernameLabel = UIFont(name: "Poppins-Medium", size: 12)
-            static let addressLabel = UIFont(name: "Poppins-Light", size: 10)
-            static let subtotalLabel = UIFont(name: "Poppins-Medium", size: 12)
+            static let orderConfirmationLabel = UIFont(name: "Poppins-Medium", size: 22)
+            static let chooseAddressAndTimaLabel = UIFont(name: "Poppins-Medium", size: 15)
+            static let addressLabel = UIFont(name: "Poppins-Medium", size: 13)
+            static let workingHoursLabel = UIFont(name: "Poppins-Light", size: 12)
             static let subtotalConsLabel = UIFont(name: "Poppins-Medium", size: 12)
-            static let taxLabel = UIFont(name: "Poppins-Medium", size: 12)
-            static let taxCostLabel = UIFont(name: "Poppins-Medium", size: 12)
-            static let deliveryFee = UIFont(name: "Poppins-Medium", size: 12)
-            static let deliveryFeeCost = UIFont(name: "Poppins-Medium", size: 12)
-            static let totalPriceLabel = UIFont(name: "Poppins-Medium", size: 12)
-            static let totalCostLabel = UIFont(name: "Poppins-SemiBold", size: 22)
+            static let paymenstMainLabel = UIFont(name: "Poppins-Medium", size: 15)
+            static let paymenstSubLabel = UIFont(name: "Poppins-Medium", size: 12)
+            static let subtotalLabel = UIFont(name: "Poppins-Medium", size: 13)
+            static let subtotalCostLabel = UIFont(name: "Poppins-Medium", size: 13)
+            static let taxLabel = UIFont(name: "Poppins-Medium", size: 13)
+            static let taxCostLabel = UIFont(name: "Poppins-Medium", size: 13)
+            static let totalPriceLabel = UIFont(name: "Poppins-Medium", size: 13)
+            static let totalCostLabel = UIFont(name: "Poppins-SemiBold", size: 23)
             static let payNowButton = UIFont(name: "Poppins-SemiBold", size: 14)
+        }
+        
+        enum CoffeeHouseController {
+            static let mainLabel = UIFont(name: "Poppins-SemiBold", size: 16)
+            static let addressLabel = UIFont(name: "Poppins-Medium", size: 12)
+            static let acceptedLabel = UIFont(name: "Poppins-SemiBold", size: 16)
+            static let preparingLabel = UIFont(name: "Poppins-SemiBold", size: 16)
+            static let estimatedPickupLabel = UIFont(name: "Poppins-SemiBold", size: 16)
+            static let emptyOrderLabel = UIFont(name: "Poppins-SemiBold", size: 18)
         }
     }
 }

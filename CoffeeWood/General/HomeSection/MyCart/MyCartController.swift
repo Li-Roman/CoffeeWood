@@ -1,10 +1,3 @@
-//
-//  MyCartController.swift
-//  CoffeeWood
-//
-//  Created by Роман Хилюк on 17.08.2023.
-//
-
 import Foundation
 import UIKit
 import SnapKit
@@ -16,13 +9,16 @@ protocol MyCartControllerDelegate: AnyObject {
     func deletePosition(at index: Int)
     func willPopToPrevController()
     func willShowOrederConfirmationController()
+    func didFinishPresentCartPositions()
 }
 
 protocol MyCartControllerInterface: AnyObject {
     func presentCartPositions(_ positions: [CartPosition])
-    func showOrderConfirmationController(for order: Order)
+    func showOrderConfirmationController()
     func showPrevController()
     func showAlert(_ alertController: UIAlertController)
+    func setupEmptyCartView()
+    func popToHomeView()
 }
 
 class MyCartController: UIViewController {
@@ -73,17 +69,19 @@ extension MyCartController: MyCartViewDelegate {
     }
     
     func didTappedCheckoutButton() {
-        print("checkount button did tapped in MyCartController")
         delegate?.willShowOrederConfirmationController()
     }
     
     func willShowCartPositions() {
-        print("Will show cart positions in MyCartController")
         delegate?.willShowCartPositions()
     }
     
     func didTappedBackArrowButton() {
         delegate?.willPopToPrevController()
+    }
+    
+    func didFinishPresentCartPositions() {
+        delegate?.didFinishPresentCartPositions()
     }
 }
 
@@ -101,8 +99,8 @@ extension MyCartController: MyCartControllerInterface {
         self.present(alertController, animated: true)
     }
     
-    func showOrderConfirmationController(for order: Order) {
-        let orderConfirmationController = OrderConfirmationModuleAssembly.configureModule(order: order)
+    func showOrderConfirmationController() {
+        let orderConfirmationController = OrderConfirmationModuleAssembly.configureModule()
         
         if let sheet = orderConfirmationController.sheetPresentationController {
             if #available(iOS 16.0, *) {
@@ -118,5 +116,13 @@ extension MyCartController: MyCartControllerInterface {
             sheet.preferredCornerRadius = 30
         }
         present(orderConfirmationController, animated: true)
+    }
+    
+    func setupEmptyCartView() {
+        myCartView?.updateForEmptyCart()
+    }
+    
+    func popToHomeView() {
+        navigationController?.popToRootViewController(animated: true)
     }
 }

@@ -1,10 +1,3 @@
-//
-//  VerificationSectionView.swift
-//  CoffeeWood
-//
-//  Created by Роман Хилюк on 26.07.2023.
-//
-
 import Foundation
 import UIKit
 import SnapKit

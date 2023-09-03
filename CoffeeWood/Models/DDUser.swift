@@ -1,10 +1,3 @@
-//
-//  DDUser.swift
-//  CoffeeWood
-//
-//  Created by Роман Хилюк on 23.07.2023.
-//
-
 import Foundation
 
 struct DDUser: Identifiable {
@@ -14,7 +7,6 @@ struct DDUser: Identifiable {
     var email: String
     var mobileNumber: String
     var address: String
-//    var ordersID: String = UUID().uuidString
     
     var representation: [String: Any] {
         
@@ -25,7 +17,6 @@ struct DDUser: Identifiable {
         representation["email"] = email
         representation["mobileNumber"] = mobileNumber
         representation["address"] = address
-//        representation["ordersID"] = ordersID
         
         return representation
     }

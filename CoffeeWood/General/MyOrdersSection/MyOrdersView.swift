@@ -1,10 +1,3 @@
-//
-//  MyOrderView.swift
-//  CoffeeWood
-//
-//  Created by Роман Хилюк on 20.08.2023.
-//
-
 import Foundation
 import UIKit
 import SnapKit
@@ -21,8 +14,8 @@ class MyOrdersView: UIView {
     private var dataSurce = [Order]()
     
     private let myOrdersLabel = UILabel()
-    private let onGoingButton = UIButton()
-    private let historyButton = UIButton()
+    private let activeButton = UIButton()
+    private let completedButton = UIButton()
     private let headerLineView = UIView()
     private let sectionUnderlineView = UIView()
     private let ordersTableView = UITableView(frame: .zero, style: .plain)
@@ -32,6 +25,7 @@ class MyOrdersView: UIView {
         delegate.willShowOnGoingOrders()
         super.init(frame: .zero)
         setupView()
+        setupGestureRecognizer()
     }
     
     required init?(coder: NSCoder) {
@@ -57,14 +51,24 @@ class MyOrdersView: UIView {
         button.configuration?.baseForegroundColor = AppColors.Buttons.TextButton.lightGray
     }
     
-    private func changeUnderlinePosition(sender: UIButton) {
-        let dif = self.sectionUnderlineView.frame.width - sender.frame.width
+    private func changeUnderlinePosition(to button: UIButton) {
+        let dif = self.sectionUnderlineView.frame.width - button.frame.width
         
         UIView.animate(withDuration: 0.5, delay: 0.1, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.8, options: [.curveEaseInOut]) {
-            self.sectionUnderlineView.frame.origin.x = sender.frame.origin.x - dif / 2
+            self.sectionUnderlineView.frame.origin.x = button.frame.origin.x - dif / 2
         } completion: { _ in
-            self.sectionUnderlineView.frame.origin.x = sender.frame.origin.x - dif / 2
+            self.sectionUnderlineView.frame.origin.x = button.frame.origin.x - dif / 2
         }
+    }
+    
+    private func setupGestureRecognizer() {
+        let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(historyButtonAction))
+        leftSwipe.direction = .left
+        addGestureRecognizer(leftSwipe)
+        
+        let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(activeButtonAction))
+        rightSwipe.direction = .right
+        addGestureRecognizer(rightSwipe)
     }
 }
 
@@ -74,8 +78,8 @@ extension MyOrdersView {
         backgroundColor = .systemBackground
         
         setupMyOrdersLabel()
-        setupOnGoingButton()
-        setupHistoryButton()
+        setupActiveButton()
+        setupCompletedButton()
         setupHeaderLineView()
         setupSectionUnderlineView()
         setupOrdersTableView()
@@ -96,22 +100,22 @@ extension MyOrdersView {
         }
     }
     
-    private func setupOnGoingButton() {
-        onGoingButton.configuration = .borderless()
+    private func setupActiveButton() {
+        activeButton.configuration = .borderless()
         
         var container = AttributeContainer()
         container.font = Resources.Font.MyOrders.onGoingTitle
         
         let onGoingString = AttributedString(Resources.Strings.MyOrders.onGoingTitle, attributes: container)
         
-        onGoingButton.configuration?.attributedTitle = onGoingString
-        onGoingButton.configuration?.titleAlignment = .center
-        onGoingButton.configuration?.baseBackgroundColor = AppColors.Buttons.Back.white
-        onGoingButton.configuration?.baseForegroundColor = AppColors.Buttons.TextButton.darkBlue
-        onGoingButton.addTarget(self, action: #selector(onGoingButtonAction(sender: )), for: .touchUpInside)
+        activeButton.configuration?.attributedTitle = onGoingString
+        activeButton.configuration?.titleAlignment = .center
+        activeButton.configuration?.baseBackgroundColor = AppColors.Buttons.Back.white
+        activeButton.configuration?.baseForegroundColor = AppColors.Buttons.TextButton.darkBlue
+        activeButton.addTarget(self, action: #selector(activeButtonAction(sender: )), for: .touchUpInside)
         
-        addSubview(onGoingButton)
-        onGoingButton.snp.makeConstraints { make in
+        addSubview(activeButton)
+        activeButton.snp.makeConstraints { make in
             make.left.equalToSuperview().inset(60)
             make.top.equalToSuperview().inset(114)
             make.width.equalTo(93)
@@ -119,25 +123,25 @@ extension MyOrdersView {
         }
     }
     
-    private func setupHistoryButton() {
-        historyButton.configuration = .borderless()
+    private func setupCompletedButton() {
+        completedButton.configuration = .borderless()
         
         var container = AttributeContainer()
         container.font = Resources.Font.MyOrders.historyTitle
         
         let onGoingString = AttributedString(Resources.Strings.MyOrders.historyTitle, attributes: container)
         
-        historyButton.configuration?.attributedTitle = onGoingString
-        historyButton.configuration?.titleAlignment = .center
-        historyButton.configuration?.baseBackgroundColor = AppColors.Buttons.Back.white
-        historyButton.configuration?.baseForegroundColor = AppColors.Buttons.TextButton.lightGray
-        historyButton.addTarget(self, action: #selector(historyButtonAction(sender: )), for: .touchUpInside)
+        completedButton.configuration?.attributedTitle = onGoingString
+        completedButton.configuration?.titleAlignment = .center
+        completedButton.configuration?.baseBackgroundColor = AppColors.Buttons.Back.white
+        completedButton.configuration?.baseForegroundColor = AppColors.Buttons.TextButton.lightGray
+        completedButton.addTarget(self, action: #selector(historyButtonAction(sender: )), for: .touchUpInside)
         
-        addSubview(historyButton)
-        historyButton.snp.makeConstraints { make in
+        addSubview(completedButton)
+        completedButton.snp.makeConstraints { make in
             make.right.equalToSuperview().inset(60)
             make.top.equalToSuperview().inset(114)
-            make.width.equalTo(93)
+            make.width.equalTo(110)
             make.height.equalTo(21)
         }
     }
@@ -148,7 +152,7 @@ extension MyOrdersView {
         addSubview(headerLineView)
         headerLineView.snp.makeConstraints { make in
             make.left.right.equalToSuperview()
-            make.top.equalTo(onGoingButton.snp_bottomMargin).inset(-28)
+            make.top.equalTo(activeButton.snp_bottomMargin).inset(-28)
             make.height.equalTo(1)
         }
     }
@@ -162,7 +166,7 @@ extension MyOrdersView {
             make.bottom.equalTo(headerLineView)
             make.height.equalTo(2)
             make.width.equalTo(114)
-            make.centerX.equalTo(onGoingButton.snp_centerXWithinMargins)
+            make.centerX.equalTo(activeButton.snp_centerXWithinMargins)
         }
     }
     
@@ -170,12 +174,11 @@ extension MyOrdersView {
         ordersTableView.register(MyOrdersTableViewCell.self, forCellReuseIdentifier: "MyOrdersTableViewCell")
         
         ordersTableView.backgroundColor = .systemBackground
-        ordersTableView.separatorColor = AppColors.Lines.lightGray
+        ordersTableView.separatorColor = AppColors.Lines.gray
         
         ordersTableView.showsVerticalScrollIndicator = false
         ordersTableView.allowsSelection = false
         ordersTableView.dataSource = self
-        ordersTableView.delegate = self
         
         ordersTableView.rowHeight = 100
         
@@ -190,20 +193,20 @@ extension MyOrdersView {
 
 // MARK: - Actions
 extension MyOrdersView {
-    @objc private func onGoingButtonAction(sender: UIButton) {
+    @objc private func activeButtonAction(sender: Any) {
         delegate?.willShowOnGoingOrders()
         
-        makeMeSelected(button: sender)
-        makeMeUnSelected(button: historyButton)
-        changeUnderlinePosition(sender: sender)
+        makeMeSelected(button: activeButton)
+        makeMeUnSelected(button: completedButton)
+        changeUnderlinePosition(to: activeButton)
     }
     
-    @objc private func historyButtonAction(sender: UIButton) {
+    @objc private func historyButtonAction(sender: Any) {
         delegate?.willShowHistoryOrders()
         
-        makeMeSelected(button: sender)
-        makeMeUnSelected(button: onGoingButton)
-        changeUnderlinePosition(sender: sender)
+        makeMeSelected(button: completedButton)
+        makeMeUnSelected(button: activeButton)
+        changeUnderlinePosition(to: completedButton)
     }
 }
 
@@ -220,9 +223,4 @@ extension MyOrdersView: UITableViewDataSource {
         cell.configureCell(with: dataSurce[indexPath.row])
         return cell
     }
-}
-
-// MARK: - UITableViewDelegate
-extension MyOrdersView: UITableViewDelegate {
-    
 }

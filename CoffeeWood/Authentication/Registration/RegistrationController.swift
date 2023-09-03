@@ -1,10 +1,3 @@
-//
-//  RegisterViewController.swift
-//  CoffeeWood
-//
-//  Created by Роман Хилюк on 19.07.2023.
-//
-
 import Foundation
 import UIKit
 
@@ -85,7 +78,7 @@ extension RegistrationController: RegistrationControllerInterfacee {
     }
     
     func showTermsVC() {
-        print("Terms and ConditionsVC")
+        // TODO: - Make Terms and Conditions Screen
     }
     
     func showAlertController(alertController: UIAlertController) {

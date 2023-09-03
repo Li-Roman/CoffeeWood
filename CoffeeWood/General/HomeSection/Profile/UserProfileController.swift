@@ -1,10 +1,3 @@
-//
-//  UserProfileViewController.swift
-//  CoffeeWood
-//
-//  Created by Роман Хилюк on 29.07.2023.
-//
-
 import Foundation
 import UIKit
 
@@ -71,7 +64,6 @@ class UserProfileController: UIViewController {
         let backButton = UIBarButtonItem(image: arrowImage, style: .plain, target: self, action: #selector(leftBarButtonAction(sender:)))
         navigationItem.leftBarButtonItem = backButton
         
-        
         let logOutImage = UIImage(systemName: "iphone.and.arrow.forward")!
         
         let logOutButton = UIBarButtonItem(image: logOutImage, style: .plain, target: self, action: #selector(logOutButtonAction(sender:)))
@@ -99,18 +91,8 @@ extension UserProfileController: UserProfileControllerInterface {
     func showOnboardingController() {
         let onbordingController = OnboardingModuleAssembly.configureModule()
         let authNavigationController = UINavigationController(rootViewController: onbordingController)
-//        authNavigationController.modalTransitionStyle = .flipHorizontal
-//        authNavigationController.modalPresentationStyle = .fullScreen
-//        present(authNavigationController, animated: true)
         (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(authNavigationController)
     }
-    
-//    func showHomePageConrtoller() {
-//        let viewController = HomeController()
-//        let navController = UINavigationController(rootViewController: viewController)
-//
-//        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(navController)
-//    }
     
     func showHomeVC() {
         navigationController?.popViewController(animated: true)

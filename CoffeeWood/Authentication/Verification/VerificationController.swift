@@ -1,10 +1,3 @@
-//
-//  VerificationViewController.swift
-//  CoffeeWood
-//
-//  Created by Роман Хилюк on 26.07.2023.
-//
-
 import Foundation
 import UIKit
 import SnapKit
@@ -61,12 +54,7 @@ extension VerificationController {
 
 // MARK: - VerificationViewDelegate
 extension VerificationController: VerificationViewDelegate {
-    func didRightSwipeAction() {
-        print("Right Swipe Action")
-    }
-    
     func didTappedNextButton(smsCode: String?) {
-        print("Next Button did tapped in VerificationViewController with smscode = \(smsCode ?? "0")")
         delegate?.nextButtonDidTapped(smsCode: smsCode)
     }
 }
@@ -75,7 +63,6 @@ extension VerificationController: VerificationViewDelegate {
 extension VerificationController: VerificationConrtollerInterface {
     func showHomeVC() {
         let tabbarController = GeneralTabBatController()
-        
         (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(tabbarController)
     }
     

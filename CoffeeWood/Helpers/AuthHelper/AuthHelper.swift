@@ -1,10 +1,3 @@
-//
-//  AuthHelper.swift
-//  CoffeeWood
-//
-//  Created by Роман Хилюк on 22.07.2023.
-//
-
 import Foundation
 import UIKit
 
@@ -66,17 +59,6 @@ final class AuthHelper {
                                   password: password) { result  in
             switch result {
             case .success( let user):
-                // TODO: - при успешном создании юзера, сразу создаем ему создаем коллекцию cart и orders
-//                self.createCartCollection(userID: user.id, cartID: user.cartID) { error in
-//                    if let error = error {
-//                        completion(.failure(error))
-//                    }
-//                }
-//                self.createOrdersCollection(userID: user.id, ordersID: user.ordersID) { error in
-//                    if let error = error {
-//                        completion(.failure(error))
-//                    }
-//                }
                 completion(.success)
             case .failure(let error):
                 completion(.failure(error))
@@ -167,20 +149,4 @@ final class AuthHelper {
 
         return alertController
     }
-    
-//    private func createCartCollection(userID: String, cartID: String, completion: @escaping (Error?) -> Void) {
-//        DatabaseService.shared.setCart(to: userID, cartID: cartID) { error in
-//            if let error = error {
-//                completion(error)
-//            }
-//        }
-//    }
-//
-//    private func createOrdersCollection(userID: String, ordersID: String, completion: @escaping (Error?) -> Void) {
-//        DatabaseService.shared.setOrders(to: userID, ordersID: ordersID) { error in
-//            if let error = error {
-//                completion(error)
-//            }
-//        }
-//    }
 }
