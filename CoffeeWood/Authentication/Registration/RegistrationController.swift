@@ -1,10 +1,3 @@
-//
-//  RegisterViewController.swift
-//  CoffeeWood
-//
-//  Created by Роман Хилюк on 19.07.2023.
-//
-
 import Foundation
 import UIKit
 
@@ -46,7 +39,7 @@ class RegistrationController: UIViewController {
 
     //MARK: - Private Methods
     private func setupNavBar() {
-        let image = UIImage(systemName: "arrow.left")?.withTintColor(.AppColor.nextButtonBlue)
+        let image = UIImage(systemName: "arrow.left")?.withTintColor(AppColors.NavController.darkBlue)
         let button = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(leftBarButtonAction(sender:)))
         navigationItem.leftBarButtonItem = button
     }
@@ -72,10 +65,6 @@ extension RegistrationController: RegistrationViewDelegate {
     func loginButtonDidTapped() {
         delegate?.willShowLoginVC()
     }
-    
-    func didRightSwipeAction() {
-        navigationController?.popViewController(animated: true)
-    }
 }
 
 // MARK: - RegistrationControllerInterfacee
@@ -89,7 +78,7 @@ extension RegistrationController: RegistrationControllerInterfacee {
     }
     
     func showTermsVC() {
-        print("Terms and ConditionsVC")
+        // TODO: - Make Terms and Conditions Screen
     }
     
     func showAlertController(alertController: UIAlertController) {

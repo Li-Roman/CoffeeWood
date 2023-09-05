@@ -1,10 +1,3 @@
-//
-//  VerificationViewController.swift
-//  CoffeeWood
-//
-//  Created by Роман Хилюк on 26.07.2023.
-//
-
 import Foundation
 import UIKit
 import SnapKit
@@ -46,7 +39,7 @@ class VerificationController: UIViewController {
     }
     
     private func setupNavBar() {
-        let image = UIImage(systemName: "arrow.left")?.withTintColor(.AppColor.nextButtonBlue)
+        let image = UIImage(systemName: "arrow.left")?.withTintColor(AppColors.NavController.darkBlue)
         let button = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(leftBarButtonAction(sender:)))
         navigationItem.leftBarButtonItem = button
     }
@@ -61,12 +54,7 @@ extension VerificationController {
 
 // MARK: - VerificationViewDelegate
 extension VerificationController: VerificationViewDelegate {
-    func didRightSwipeAction() {
-        print("Right Swipe Action")
-    }
-    
     func didTappedNextButton(smsCode: String?) {
-        print("Next Button did tapped in VerificationViewController with smscode = \(smsCode ?? "0")")
         delegate?.nextButtonDidTapped(smsCode: smsCode)
     }
 }
@@ -74,10 +62,8 @@ extension VerificationController: VerificationViewDelegate {
 // MARK: - VerificationConrtollerInterface
 extension VerificationController: VerificationConrtollerInterface {
     func showHomeVC() {
-        let viewController = HomeViewController()
-        let navController = UINavigationController(rootViewController: viewController)
-        navController.modalPresentationStyle = .fullScreen
-        present(navController, animated: true)
+        let tabbarController = GeneralTabBatController()
+        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(tabbarController)
     }
     
     func showAlertConrtoller(_ alertController: UIAlertController) {

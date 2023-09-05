@@ -1,10 +1,3 @@
-//
-//  LoginViewController.swift
-//  CoffeeWood
-//
-//  Created by Роман Хилюк on 19.07.2023.
-//
-
 import Foundation
 import UIKit
 import SnapKit
@@ -18,11 +11,11 @@ protocol LoginControllerDelegate: AnyObject {
 protocol LoginControllerInterface: AnyObject {
     func pushRegistrationConrtoller()
     func pushResetPasswordConrtoller()
-    func showHomePageConrtoller()
     func showResetPasswordConrtoller()
     func showAlertController(_ alertController: UIAlertController)
     func clearPasswordTextField()
     func clearEmailTextField()
+    func showTabbarController()
 }
 
 class LoginController: UIViewController {
@@ -53,7 +46,7 @@ class LoginController: UIViewController {
     }
 
     private func setupNavBar() {
-        let image = UIImage(systemName: "arrow.left")?.withTintColor(.AppColor.nextButtonBlue)
+        let image = UIImage(systemName: "arrow.left")?.withTintColor(AppColors.NavController.darkBlue)
         let button = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(leftBarButtonAction(sender:)))
         navigationItem.leftBarButtonItem = button
     }
@@ -101,13 +94,12 @@ extension LoginController: LoginControllerInterface {
         navigationController?.pushViewController(registerVC, animated: true)
     }
     
-    func showHomePageConrtoller() {
-        let viewController = HomeViewController()
-        let navController = UINavigationController(rootViewController: viewController)
-        navController.modalPresentationStyle = .fullScreen
-        present(navController, animated: true)
+    func showTabbarController() {
+        let tabbarController = GeneralTabBatController()
+        
+        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(tabbarController)
     }
-    
+
     func showResetPasswordConrtoller() {
         let viewConrtoller = ResetPasswordModuleAssembly.configureModule()
         navigationController?.pushViewController(viewConrtoller, animated: true)

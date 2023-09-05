@@ -1,11 +1,6 @@
-//
-//  SceneDelegate.swift
-//  CoffeeWood
-//
-//  Created by Роман Хилюк on 18.07.2023.
-//
-
 import UIKit
+
+let screenSize: CGRect = UIScreen.main.bounds
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -16,16 +11,27 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: scene)
         
         if let _ = AuthService.shared.currentUser {
-            let viewController = HomeViewController()
-            let navController = UINavigationController(rootViewController: viewController)
-            window?.rootViewController = navController
+            let tabbarController = GeneralTabBatController()
+            window?.rootViewController = tabbarController
         } else {
             let viewController = OnboardingModuleAssembly.configureModule()
             let navController = UINavigationController(rootViewController: viewController)
             window?.rootViewController = navController
         }
-        
+
         window?.makeKeyAndVisible()
+    }
+    
+    func changeRootViewController(_ viewController: UIViewController, animation: Bool = true) {
+        guard let window = self.window else { return }
+        
+        // change the root view controller to your specific view controller
+        window.rootViewController = viewController
+        UIView.transition(with: window,
+                              duration: 0.5,
+                              options: [.transitionFlipFromLeft],
+                              animations: nil,
+                              completion: nil)
     }
 }
 

@@ -1,10 +1,3 @@
-//
-//  ViewController.swift
-//  CoffeeWood
-//
-//  Created by Роман Хилюк on 18.07.2023.
-//
-
 import UIKit
 import SnapKit
 
@@ -44,7 +37,7 @@ class OnboardingController: UIViewController {
     }
     
     private func setupNavigationController() {
-        navigationController?.navigationBar.tintColor = .AppColor.mainLabels
+        navigationController?.navigationBar.tintColor = AppColors.NavController.darkBlue
     }
 }
 
