@@ -2,6 +2,13 @@
 
 ## A branded application designed specifically for the CoffeeWood coffee shop, which includes mobile ordering, with pre-order, payment and loyalty features to attract customers. With ordering and payment tools, customers can pre-order and pre-pay from their phones. These mobile app orders then appear on the company order management screen where they can be processed and fulfilled
 <br>
+
+## DEMO
+
+<img src='https://github.com/Li-Roman/CoffeeWood/assets/35653846/6f22780f-8e8f-4fcd-96e5-2773d8ef0936.gif' width="250"/> 
+<img src='https://github.com/Li-Roman/CoffeeWood/assets/35653846/fff628e4-8e1d-466c-ad47-55464cbaa6ac.gif' width="250"/> 
+<img src='https://github.com/Li-Roman/CoffeeWood/assets/35653846/62a2c096-1040-476e-8843-689629eb501a.gif' width="250"/> 
+<br>
 <br>
 
 ### User authentication section is implemented by Firebase, where a collection of users is stored.
